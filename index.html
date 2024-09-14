@@ -9,6 +9,7 @@
       background-color: black; /* Background color of the page */
       color: white; /* Text color */
       display: flex;
+      flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
       height: 100vh;
@@ -25,14 +26,33 @@
       margin-top: 10px; /* Space between Hello and the new text */
       font-size: 20px; /* Smaller font size for the subtext */
     }
+
+    .image-container {
+      display: flex;
+      justify-content: center; /* Center the image horizontally */
+      align-items: center; /* Center the image vertically */
+      flex-grow: 1; /* Take up the remaining space to push content to the top and bottom */
+      width: 100%;
+    }
+
+    img {
+      max-width: 50%; /* Adjust this size as needed */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px; /* Optional: Rounded corners */
+    }
   </style>
 </head>
 <body>
   <div class="top-left">
     ALIENST DECEMBER 30TH <!-- Main text -->
-    <div class="subtext">WORLDWIDE</div> <!-- New line of text -->
+    <div class="subtext">worldwide</div> <!-- New line of text -->
+  </div>
+
+  <div class="image-container">
+    <img src="https://ibb.co/sCdswL1" alt="Your Image"> <!-- Replace with your image URL -->
   </div>
 </body>
 </html>
+
 
 
