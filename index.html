@@ -32,14 +32,30 @@
     }
 
     .extra-text {
-      margin-top: 90px; /* Space between subtext and extra text */
-      font-size: 24px; /* Decreased font size for the extra text */
-      color: white; /* Text color for the link */
+      margin-top: 20px; /* Space between subtext and extra text */
+      font-size: 23px; /* Decreased font size for the extra text */
+      color: white; /* Initial text color */
       text-decoration: none; /* Remove underline from the link */
+      animation: fadeInOut 4s infinite; /* Apply the animation with 4s duration */
     }
 
     .extra-text:hover {
       text-decoration: underline; /* Underline on hover */
+    }
+
+    @keyframes fadeInOut {
+      0% {
+        color: white; /* Initial color */
+        opacity: 0.5; /* Initial opacity */
+      }
+      50% {
+        color: blue; /* Color during animation */
+        opacity: 1; /* Full opacity */
+      }
+      100% {
+        color: white; /* End color */
+        opacity: 0.5; /* End opacity */
+      }
     }
 
     .image-container {
@@ -52,7 +68,7 @@
     }
 
     img {
-      max-width: 190px; /* Slightly larger size for the image */
+      max-width: 200px; /* Larger size for the image */
       height: auto; /* Maintain aspect ratio */
       border-radius: 10px; /* Optional: Rounded corners */
     }
@@ -60,7 +76,7 @@
 </head>
 <body>
   <div class="top-left">
-    <div class="main-text">ALIENST DECEMBER 30th</div> <!-- Main text -->
+    <div class="main-text">ALIENST DECEMBER 30</div> <!-- Main text -->
     <div class="subtext">LIMITED AND WORLDWIDE</div> <!-- Subtext -->
     <a href="https://foundation.app/" class="extra-text" target="_blank">25COLLECTION OUT NOW ON FOUNDATION</a> <!-- Extra text with link -->
   </div>
@@ -70,6 +86,7 @@
   </div>
 </body>
 </html>
+
 
 
 
