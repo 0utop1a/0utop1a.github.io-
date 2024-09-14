@@ -9,29 +9,21 @@
       background-color: black; /* Background color of the page */
       color: white; /* Text color */
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-start;
+      align-items: flex-start;
       height: 100vh;
       margin: 0;
-      font-family: Arial, sans-serif; /* Font style */
-      font-size: 50px; /* Font size */
+      font-family: 'Courier New', Courier, monospace; /* Typewriter font */
+      font-size: 30px; /* Decreased font size */
     }
 
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .spin-text {
-      animation: spin 5s linear infinite; /* 5 seconds for one complete rotation */
+    .top-left {
+      margin: 20px; /* Margin to push text away from the edges */
     }
   </style>
 </head>
 <body>
-  <div class="spin-text">ALIENS-TS DECEMBER 30TH</div> <!-- This is the text that will rotate -->
+  <div class="top-left">ALIENST DECEMBER 30TH</div> <!-- This is the text that appears at the top left -->
 </body>
 </html>
+
