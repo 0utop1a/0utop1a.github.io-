@@ -9,7 +9,6 @@
       background-color: black; /* Background color of the page */
       color: white; /* Text color */
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -18,35 +17,21 @@
       font-size: 50px; /* Font size */
     }
 
-    .button-container {
-      margin-top: auto; /* Push the button to the bottom */
-      padding-bottom: 20px; /* Space between the button and the bottom of the screen */
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
-    .instagram-button {
-      background-color: white;
-      color: black;
-      border: none;
-      padding: 15px 30px;
-      font-size: 20px;
-      cursor: pointer;
-      text-decoration: none;
-      border-radius: 5px;
-      font-family: Arial, sans-serif;
-    }
-
-    .instagram-button:hover {
-      background-color: gray; /* Button hover effect */
+    .spin-text {
+      animation: spin 5s linear infinite; /* 5 seconds for one complete rotation */
     }
   </style>
 </head>
 <body>
-  ALIENS-ts DECEMBER 20TH <!-- This is the text that appears on the screen -->
-
-  <div class="button-container">
-    <a href="https://www.instagram.com/0utop1a/" class="instagram-button" target="_blank">
-      Instagram
-    </a>
-  </div>
+  <div class="spin-text">ALIENS-TS DECEMBER 30TH</div> <!-- This is the text that will rotate -->
 </body>
 </html>
