@@ -28,34 +28,14 @@
 
     .subtext {
       margin-top: 10px; /* Space between main text and subtext */
-      font-size: 15px; /* Smaller font size for the subtext */
+      font-size: 20px; /* Smaller font size for the subtext */
     }
 
     .extra-text {
       margin-top: 20px; /* Space between subtext and extra text */
-      font-size: 19px; /* Decreased font size for the extra text */
+      font-size: 24px; /* Decreased font size for the extra text */
       color: white; /* Initial text color */
       text-decoration: none; /* Remove underline from the link */
-      animation: fadeInOut 4s infinite; /* Apply the animation with 4s duration */
-    }
-
-    .extra-text:hover {
-      text-decoration: underline; /* Underline on hover */
-    }
-
-    @keyframes fadeInOut {
-      0% {
-        color: white; /* Initial color */
-        opacity: 0.5; /* Initial opacity */
-      }
-      50% {
-        color: blue; /* Color during animation */
-        opacity: 1; /* Full opacity */
-      }
-      100% {
-        color: white; /* End color */
-        opacity: 0.5; /* End opacity */
-      }
     }
 
     .image-container {
@@ -71,26 +51,22 @@
       max-width: 200px; /* Larger size for the image */
       height: auto; /* Maintain aspect ratio */
       border-radius: 10px; /* Optional: Rounded corners */
+      cursor: pointer; /* Make the cursor a pointer to indicate it's clickable */
     }
   </style>
 </head>
 <body>
   <div class="top-left">
-    <div class="main-text">ALIENST DECEMBER 30th</div> <!-- Main text -->
+    <div class="main-text">ALIENST DECEMBER 30</div> <!-- Main text -->
     <div class="subtext">LIMITED AND WORLDWIDE</div> <!-- Subtext -->
-    <a href="https://foundation.app/" class="extra-text" target="_blank">25COLLECTION OUT NOW ON FOUNDATION</a> <!-- Extra text with link -->
+    <a href="https://example.com" class="extra-text" target="_blank">25COLLECTION OUT NOW ON FOUNDATION</a> <!-- Extra text with link -->
   </div>
 
   <div class="image-container">
-    <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Description of Image"> <!-- Replace with your image URL -->
+    <!-- This is where the image becomes a clickable link to the second page -->
+    <a href="page2.html">
+      <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Description of Image">
+    </a>
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
