@@ -9,46 +9,23 @@
       background-color: black; /* Background color of the page */
       color: white; /* Text color */
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
       height: 100vh;
       margin: 0;
       font-family: 'Courier New', Courier, monospace; /* Typewriter font */
-      font-size: 30px; /* Font size */
-    }
-
-    .top-left {
-      margin: 20px; /* Margin to push text away from the edges */
-    }
-
-    .main-text {
-      margin: 0; /* Remove margin to place subtext directly under the main text */
-    }
-
-    .subtext {
-      margin-top: 10px; /* Space between main text and subtext */
-      font-size: 20px; /* Smaller font size for the subtext */
-    }
-
-    .extra-text {
-      margin-top: 20px; /* Space between subtext and extra text */
-      font-size: 24px; /* Decreased font size for the extra text */
-      color: white; /* Initial text color */
-      text-decoration: none; /* Remove underline from the link */
     }
 
     .image-container {
       display: flex;
       justify-content: center; /* Center the image horizontally */
       align-items: center; /* Center the image vertically */
-      flex-grow: 1; /* Take up the remaining space to push content to the top and bottom */
       width: 100%;
-      margin-top: 20px; /* Margin at the top to push the image down */
+      height: 100%; /* Take up the full height of the viewport */
     }
 
     img {
-      max-width: 200px; /* Larger size for the image */
+      max-width: 200px; /* Size for the image */
       height: auto; /* Maintain aspect ratio */
       border-radius: 10px; /* Optional: Rounded corners */
       cursor: pointer; /* Make the cursor a pointer to indicate it's clickable */
@@ -56,14 +33,8 @@
   </style>
 </head>
 <body>
-  <div class="top-left">
-    <div class="main-text">ALIENST DECEMBER 30</div> <!-- Main text -->
-    <div class="subtext">LIMITED AND WORLDWIDE</div> <!-- Subtext -->
-    <a href="https://example.com" class="extra-text" target="_blank">25COLLECTION OUT NOW ON FOUNDATION</a> <!-- Extra text with link -->
-  </div>
-
   <div class="image-container">
-    <!-- This is where the image becomes a clickable link to the second page -->
+    <!-- Image is now clickable and links to page2.html -->
     <a href="page2.html">
       <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Description of Image">
     </a>
