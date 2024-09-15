@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>aliens</title> <!-- This is the title that appears on the browser tab -->
+  <title>4th July</title> <!-- This is the title that appears on the browser tab -->
   <style>
     body {
       background-color: black; /* Background color of the page */
@@ -25,11 +25,12 @@
     }
 
     a {
-      outline: none; /* Remove focus outline on all devices */
+      outline: none; /* Remove focus outline */
+      -webkit-tap-highlight-color: transparent; /* Remove blue highlight on mobile (iOS/Safari) */
     }
 
     a:focus, a:active, a:hover {
-      outline: none; /* Remove focus, active, and hover outlines for all states */
+      outline: none; /* Ensure no outline on all interaction states */
     }
 
     img {
@@ -42,6 +43,7 @@
 
     img:focus, img:active, img:hover {
       outline: none; /* Remove outline for all interaction states on the image */
+      -webkit-tap-highlight-color: transparent; /* Remove blue tap highlight on mobile */
     }
   </style>
 </head>
@@ -54,4 +56,5 @@
   </div>
 </body>
 </html>
+
 
