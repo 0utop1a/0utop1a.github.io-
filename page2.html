@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>aliensinvade</title> <!-- Title for the second page -->
+  <title>4th July - Details</title> <!-- Title for the second page -->
   <style>
     body {
       background-color: black; /* Background color of the page */
@@ -36,9 +36,25 @@
       margin-top: 20px; /* Space for additional content if needed */
     }
 
+    .animated-link {
+      font-size: 20px; /* Smaller font size for the animated link */
+      margin-top: 20px; /* Space between the last text and animated link */
+      color: white; /* Initial text color */
+      animation: fadeColor 4s infinite; /* Animation to fade between colors */
+    }
+
     a {
-      outline: none; /* Remove focus outline */
-      -webkit-tap-highlight-color: transparent; /* Remove blue highlight on mobile (iOS/Safari) */
+      text-decoration: none; /* Remove underline from link */
+    }
+
+    @keyframes fadeColor {
+      0% { color: white; }
+      50% { color: skyblue; }
+      100% { color: white; }
+    }
+
+    a:focus {
+      outline: none; /* Remove blue focus box on mobile and desktop */
     }
   </style>
 </head>
@@ -58,6 +74,10 @@
 
     <div class="main-text">A4IENS</div>
     <div class="subtext">aug 8th</div>
+
+    <!-- New clickable animated text -->
+    <a href="https://foundation.app/" class="animated-link">25 COLLECTION OUT NOW</a>
   </div>
 </body>
 </html>
+
