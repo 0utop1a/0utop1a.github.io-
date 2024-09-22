@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Utopia</title> <!-- This is the title that appears on the browser tab -->
+  <title>Utopia</title>
   <style>
     body {
       background-color: black;
@@ -15,11 +15,14 @@
       margin: 0;
       font-family: 'Courier New', Courier, monospace;
       text-align: center;
+      overflow: hidden;
     }
 
     .intro-container {
       max-width: 800px;
       padding: 20px;
+      opacity: 0;
+      animation: fadeIn 3s ease-in-out forwards;
     }
 
     h1 {
@@ -57,6 +60,17 @@
       border-radius: 10px; /* Optional: rounded corners */
     }
 
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: Adds slight upward movement */
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
