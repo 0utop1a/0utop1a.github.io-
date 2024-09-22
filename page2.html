@@ -8,100 +8,57 @@
     body {
       background-color: black;
       color: white;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Courier New', Courier, monospace;
       text-align: center;
-      overflow: hidden;
     }
 
-    .intro-container {
-      max-width: 800px;
-      padding: 20px;
-      opacity: 0;
-      transform: translateY(50px); /* Initial hidden position */
-      animation: fadeSlideIn 1.5s ease-in-out forwards;
-      animation-delay: 0.5s;
-    }
-
-    h1, p, .cta {
-      opacity: 0;
-      transform: translateY(50px); /* Initial position below screen */
-    }
-
+    /* Main Heading Style */
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
+      font-size: 2.5em; /* Slightly smaller heading */
       color: #00ffff;
-      animation: fadeSlideIn 1.5s ease-in-out forwards;
-      animation-delay: 1s;
-    }
-
-    p {
-      font-size: 1em;
+      margin-top: 40px; /* Position at the top middle */
       margin-bottom: 40px;
-      animation: fadeSlideIn 1.5s ease-in-out forwards;
-      animation-delay: 1.5s;
     }
 
+    /* Explore Button Style */
     .cta {
-      font-size: 1.2em;
+      font-size: 1.2em; /* Slightly smaller button text */
       color: #00ffff;
       text-decoration: underline;
       cursor: pointer;
-      animation: fadeSlideIn 1.5s ease-in-out forwards;
-      animation-delay: 2s;
+      padding: 10px 20px;
+      border: 1px solid #00ffff;
+      border-radius: 5px;
+      margin-top: 20px;
     }
 
     .cta:hover {
-      color: #ffffff;
+      background-color: #00ffff;
+      color: black;
     }
 
-    /* Logo positioning */
-    .logo-container {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-
-    .logo-container img {
-      max-width: 100px;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    /* Staggered Fade and Slide Animation */
-    @keyframes fadeSlideIn {
-      0% {
-        opacity: 0;
-        transform: translateY(50px); /* Start below the screen */
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0); /* Move to original position */
-      }
+    a {
+      text-decoration: none;
     }
 
   </style>
 </head>
 <body>
 
-  <!-- Logo in top left corner -->
-  <div class="logo-container">
-    <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo">
-  </div>
+  <!-- Main Heading -->
+  <h1>Utopia</h1>
 
-  <!-- Intro Section -->
-  <div class="intro-container">
-    <h1>Utopia</h1> <!-- Main heading -->
-    <p>utopians getaway</p> <!-- Short description -->
-    <a href="page2.html">
-      <div class="cta">Explore Now</div>
-    </a> <!-- Link to page2.html -->
-  </div>
+  <!-- Explore Button -->
+  <a href="page2.html">
+    <div class="cta">Explore Now</div>
+  </a>
 
 </body>
 </html>
