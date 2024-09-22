@@ -3,81 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>utopia</title> <!-- Title for the second page -->
+  <title>Utopia</title>
   <style>
     body {
-      background-color: black; /* Background color of the page */
-      color: white; /* Text color */
+      background-color: black;
+      color: white;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start; /* Align text to the top */
-      align-items: flex-start; /* Align text to the left */
+      justify-content: center;
+      align-items: center;
       height: 100vh;
       margin: 0;
-      font-family: 'Courier New', Courier, monospace; /* Typewriter font */
-      font-size: 18px; /* Base font size for main text */
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      overflow: hidden;
     }
 
-    .top-left {
-      margin: 20px; /* Margin to push text away from the edges */
+    .intro-container {
+      max-width: 800px;
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(50px); /* Initial hidden position */
+      animation: fadeSlideIn 1.5s ease-in-out forwards;
+      animation-delay: 0.5s;
     }
 
-    .main-text {
-      font-size: 24px; /* Smaller font size for main text */
-      margin-bottom: 5px; /* Space between main text and subtext */
+    h1, p, .cta {
+      opacity: 0;
+      transform: translateY(50px); /* Initial position below screen */
     }
 
-    .subtext {
-      font-size: 16px; /* Smaller font size for the subtext */
-      margin-bottom: 20px; /* Space between items */
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #00ffff;
+      animation: fadeSlideIn 1.5s ease-in-out forwards;
+      animation-delay: 1s;
     }
 
-    .extra-text {
-      margin-top: 20px; /* Space for additional content if needed */
+    p {
+      font-size: 1em;
+      margin-bottom: 40px;
+      animation: fadeSlideIn 1.5s ease-in-out forwards;
+      animation-delay: 1.5s;
     }
 
-    .animated-link {
-      font-size: 20px; /* Smaller font size for the animated link */
-      margin-top: 20px; /* Space between the last text and animated link */
-      color: white; /* Initial text color */
-      animation: fadeColor 4s infinite; /* Animation to fade between colors */
+    .cta {
+      font-size: 1.2em;
+      color: #00ffff;
+      text-decoration: underline;
+      cursor: pointer;
+      animation: fadeSlideIn 1.5s ease-in-out forwards;
+      animation-delay: 2s;
     }
 
-    a {
-      text-decoration: none; /* Remove underline from link */
+    .cta:hover {
+      color: #ffffff;
     }
 
-    @keyframes fadeColor {
-      0% { color: white; }
-      50% { color: skyblue; }
-      100% { color: white; }
+    /* Logo positioning */
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
     }
 
-    a:focus {
-      outline: none; /* Remove blue focus box on mobile and desktop */
+    .logo-container img {
+      max-width: 100px;
+      height: auto;
+      border-radius: 10px;
     }
+
+    /* Staggered Fade and Slide Animation */
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50px); /* Start below the screen */
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0); /* Move to original position */
+      }
+    }
+
   </style>
 </head>
 <body>
-  <div class="top-left">
-    <div class="main-text">ALIENS-T</div>
-    <div class="subtext">JANUARY 30TH</div>
 
-    <div class="main-text">AL1ENS</div>
-    <div class="subtext">JULY 4th</div>
-
-    <div class="main-text">ALIEN2</div>
-    <div class="subtext">JULY 11th</div>
-
-    <div class="main-text">ALI3NS</div>
-    <div class="subtext">N/D</div>
-
-    <div class="main-text">A4IENS</div>
-    <div class="subtext">AUGUST 8th</div>
-
-    <!-- New clickable animated text -->
-    <a href="https://foundation.app/" class="animated-link">25COLLECTION OUT NOW</a>
+  <!-- Logo in top left corner -->
+  <div class="logo-container">
+    <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo">
   </div>
+
+  <!-- Intro Section -->
+  <div class="intro-container">
+    <h1>Utopia</h1> <!-- Main heading -->
+    <p>utopians getaway</p> <!-- Short description -->
+    <a href="page2.html">
+      <div class="cta">Explore Now</div>
+    </a> <!-- Link to page2.html -->
+  </div>
+
 </body>
 </html>
-
