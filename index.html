@@ -3,61 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page 2</title>
+  <title>Utopia</title>
   <style>
     body {
       background-color: black;
       color: white;
+      font-family: 'Courier New', Courier, monospace;
       margin: 0;
-      padding: 20px;
-      font-family: 'Courier New', Courier, monospace; /* Typewriter font */
-      font-size: 18px; /* Slightly smaller font size */
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
-    .main-text {
-      font-size: 24px; /* Font size for main headings */
-      margin-top: 20px; /* Space between each main heading */
+    /* Main Heading Style */
+    h1 {
+      font-size: 2.5em; /* Slightly smaller heading */
+      color: #00ffff;
+      margin-top: 40px; /* Position at the top middle */
+      margin-bottom: 40px;
     }
 
-    .subtext {
-      font-size: 16px; /* Smaller font size for subtext */
-      margin-top: 5px; /* Less space between main text and subtext */
-    }
-
-    /* Animation for clickable text */
-    .clickable {
-      color: white;
+    /* Explore Button Style */
+    .cta {
+      font-size: 1.2em; /* Slightly smaller button text */
+      color: #00ffff;
       text-decoration: underline;
       cursor: pointer;
-      animation: fadeColor 4s infinite;
+      padding: 10px 20px;
+      border: 1px solid #00ffff;
+      border-radius: 5px;
+      margin-top: 20px;
     }
 
-    @keyframes fadeColor {
-      0% { color: skyblue; }
-      50% { color: white; }
-      100% { color: skyblue; }
+    .cta:hover {
+      background-color: #00ffff;
+      color: black;
     }
+
+    a {
+      text-decoration: none;
+    }
+
   </style>
 </head>
 <body>
-  <div class="main-text">ALIENS-T</div>
-  <div class="subtext">JAN 30TH</div>
 
-  <div class="main-text">AL1ENS</div>
-  <div class="subtext">july 4th</div>
+  <!-- Main Heading -->
+  <h1>Utopia</h1>
 
-  <div class="main-text">ALIEN2</div>
-  <div class="subtext">july 11th</div>
+  <!-- Explore Button -->
+  <a href="page2.html">
+    <div class="cta">ALIENS</div>
+  </a>
 
-  <div class="main-text">ALI3NS</div>
-  <div class="subtext">N/D</div>
-
-  <div class="main-text">A4IENS</div>
-  <div class="subtext">aug 8th</div>
-
-  <!-- New clickable animated main text -->
-  <div class="main-text clickable">
-    <a href="https://example.com" style="color: inherit; text-decoration: none;">CLICK ME FOR MORE INFO</a>
-  </div>
 </body>
 </html>
