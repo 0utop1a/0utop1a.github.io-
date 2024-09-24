@@ -3,71 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>utopia</title>
+  <title>Utopia</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
       background-color: black;
       color: white;
       font-family: 'Courier New', Courier, monospace;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      height: 100vh;
+      overflow: hidden; /* Prevents scrolling issues */
     }
 
-    /* Logo */
     .logo {
       position: absolute;
-      top: 10px;
-      left: 10px;
-      max-width: 80px; /* Increase logo size */
+      top: 20px;
+      left: 20px;
+      max-width: 60px; /* Slightly larger logo */
       height: auto;
     }
 
-    /* Main Heading Style */
     h1 {
-      font-size: 2em; /* Smaller heading */
-      color: white; /* White color for the heading */
-      margin-top: 20px; /* Push it to the top */
-    }
-
-    /* Explore Button Style */
-    .cta {
-      font-size: 1.2em;
+      font-size: 3rem;
       color: white;
-      background-color: transparent;
-      border: 1px solid white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-bottom: 50px; /* Keeps the button closer to the bottom */
+      margin: 0;
+      position: absolute;
+      top: 50px; /* Positioned at the top */
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .cta:hover {
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .explore-button {
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .explore-button:hover {
       background-color: white;
       color: black;
     }
 
-    a {
-      text-decoration: none; /* Removes the underline from the button */
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+        top: 20px; /* Adjust the position on smaller screens */
+      }
+
+      .explore-button {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Logo in the top-left corner -->
+  <img class="logo" src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo">
 
-  <!-- Logo in the top left corner -->
-  <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo">
-
-  <!-- Main Heading -->
+  <!-- Main heading in the center top -->
   <h1>Utopia</h1>
 
-  <!-- Explore Now Button -->
-  <a href="page2.html">
-    <div class="cta">ALIENS</div>
-  </a>
-
+  <!-- Button in the middle -->
+  <div class="button-container">
+    <a href="page2.html" class="explore-button">ALIENS</a>
+  </div>
 </body>
 </html>
