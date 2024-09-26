@@ -58,8 +58,15 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      font-size: 18px;
+      text-align: right;
+      font-size: 24px;
       color: white;
+    }
+
+    .date {
+      font-size: 14px;
+      color: white;
+      margin-top: 5px;
     }
 
     /* Styles for Mobile Devices */
@@ -88,7 +95,7 @@
       }
 
       .clock {
-        font-size: 16px; /* Smaller clock text for mobile */
+        font-size: 18px; /* Smaller clock text for mobile */
       }
     }
   </style>
@@ -104,7 +111,10 @@
     <a href="page2.html" class="button">ALIENS</a>
   </div>
 
-  <div class="clock" id="clock">00:00:00</div>
+  <div class="clock">
+    <div id="time">00:00:00.000</div>
+    <div class="date" id="date">0000-00-00</div>
+  </div>
 
   <script>
     function updateClock() {
@@ -112,10 +122,20 @@
       const hours = String(now.getHours()).padStart(2, '0');
       const minutes = String(now.getMinutes()).padStart(2, '0');
       const seconds = String(now.getSeconds()).padStart(2, '0');
-      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+      const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
+      
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0'); // Month is 0-based, so add 1
+      const day = String(now.getDate()).padStart(2, '0');
+
+      // Update time
+      document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+      
+      // Update date
+      document.getElementById('date').textContent = `${year}-${month}-${day}`;
     }
 
-    setInterval(updateClock, 1000);
+    setInterval(updateClock, 1); // Update every millisecond
     updateClock(); // Initialize the clock immediately
   </script>
 </body>
