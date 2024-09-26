@@ -14,7 +14,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center; /* Center everything vertically */
       height: 100vh;
     }
 
@@ -25,18 +25,13 @@
     }
 
     .logo img {
-      width: 60px;
+      width: 80px; /* Increase the logo size */
       height: auto;
     }
 
-    .main-heading {
-      font-size: 40px;
-      margin-top: 50px;
-      color: white;
-    }
-
     .button-container {
-      margin-top: 20px;
+      text-align: center; /* Center the button */
+      margin-top: -50px; /* Move the button up to center it better */
     }
 
     .button {
@@ -72,21 +67,16 @@
     /* Styles for Mobile Devices */
     @media (max-width: 768px) {
       body {
-        justify-content: flex-start;
+        justify-content: center; /* Center content vertically */
         padding: 10px;
       }
 
       .logo img {
-        width: 40px; /* Smaller logo for mobile */
-      }
-
-      .main-heading {
-        font-size: 30px; /* Smaller heading for mobile */
-        margin-top: 20px; /* Less margin on mobile */
+        width: 60px; /* Smaller logo for mobile */
       }
 
       .button-container {
-        margin-top: 10px; /* Less margin on mobile */
+        margin-top: -20px; /* Adjust margin for mobile */
       }
 
       .button {
@@ -104,8 +94,6 @@
   <div class="logo">
     <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo">
   </div>
-
-  <h1 class="main-heading">Utopia</h1>
 
   <div class="button-container">
     <a href="page2.html" class="button">ALIENS</a>
@@ -125,7 +113,7 @@
       const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
       
       const year = now.getFullYear();
-      const month = String(now.getMonth() + 1).padStart(2, '0'); // Month is 0-based, so add 1
+      const month = String(now.getMonth() + 1).padStart(2, '0');
       const day = String(now.getDate()).padStart(2, '0');
 
       // Update time
