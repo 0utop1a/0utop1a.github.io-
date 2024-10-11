@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>utopia</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Courier New', Courier, monospace;
-      color: white;
-      overflow: hidden; /* Prevent scrollbars */
-      background: url('https://i.ibb.co/nPhXKbn/huhu.png') no-repeat center center; /* Background image */
-      background-size: cover; /* Ensure the image covers the entire viewport */
-      height: 100vh; /* Full height */
-    }
-    .content {
-      position: absolute; /* Position absolute to center */
-      top: 50%; /* Move to the middle vertically */
-      left: 50%; /* Move to the middle horizontally */
-      transform: translate(-50%, -50%); /* Center the element */
-      z-index: 1; /* Above the background */
-      text-align: center; /* Center text */
-    }
-    .explore-button {
-      font-size: 24px; /* Font size for button */
-      padding: 10px 20px; /* Padding for the button */
-      background-color: transparent; /* Transparent background */
-      border: 2px solid white; /* White border */
-      color: white; /* Text color */
-      text-decoration: none; /* Remove underline */
-      cursor: pointer; /* Pointer cursor */
-      border-radius: 5px; /* Rounded corners */
-    }
-    .explore-button:hover {
-      background-color: white; /* Change background on hover */
-      color: black; /* Change text color on hover */
-    }
-    .logo {
-      position: absolute; /* Position logo */
-      top: 10px; /* Distance from the top */
-      left: 10px; /* Distance from the left */
-      width: 70px; /* Increased logo size */
-      height: auto; /* Maintain aspect ratio */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utopia</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            overflow: hidden; /* Prevent scrollbars */
+            background: url('https://i.ibb.co/nPhXKbn/huhu.png') no-repeat center center; /* Background image */
+            background-size: cover; /* Ensure the image covers the entire viewport */
+            height: 100vh; /* Full height */
+        }
+        .content {
+            position: absolute; /* Position absolute to center */
+            top: 50%; /* Move to the middle vertically */
+            left: 50%; /* Move to the middle horizontally */
+            transform: translate(-50%, -50%); /* Center the element */
+            z-index: 1; /* Above the background */
+            text-align: center; /* Center text */
+        }
+        .explore-button {
+            font-size: 24px; /* Font size for button */
+            padding: 15px 30px; /* Padding for the button */
+            background-color: transparent; /* Transparent background */
+            border: 2px solid white; /* White border */
+            color: white; /* Text color */
+            text-decoration: none; /* Remove underline */
+            cursor: pointer; /* Pointer cursor */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+            margin-top: 20px; /* Space above button */
+        }
+        .explore-button:hover {
+            background-color: white; /* Change background on hover */
+            color: black; /* Change text color on hover */
+        }
+        .logo {
+            position: absolute; /* Position logo */
+            top: 10px; /* Distance from the top */
+            left: 10px; /* Distance from the left */
+            width: 70px; /* Adjust logo size */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
 </head>
 <body>
-  <!-- Logo -->
-  <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo">
+    <!-- Logo -->
+    <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo">
 
-  <div class="content">
-    <a href="mobile.page2.html">ALIENS</a>
-  </div>
+    <div class="content">
+        <a href="mobile.page2.html" class="explore-button">ALIENS</a>
+    </div>
 </body>
 </html>
