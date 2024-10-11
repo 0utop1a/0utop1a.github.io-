@@ -11,15 +11,8 @@
       font-family: 'Courier New', Courier, monospace;
       color: white;
       overflow: hidden; /* Prevent scrollbars */
-    }
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw; /* Full width */
-      height: 100vh; /* Full height */
-      z-index: -1; /* Behind all content */
-      object-fit: cover; /* Ensures video covers the entire area */
+      background: url('https://i.ibb.co/HXcXsFN/image.jpg') no-repeat center center fixed; /* Background image */
+      background-size: cover; /* Cover the entire area */
     }
     .content {
       position: relative; /* Relative to video */
@@ -27,19 +20,25 @@
       text-align: center; /* Center text */
       padding: 20px;
     }
-    .main-text {
-      font-size: 30px; /* Font size for main headings */
-      margin: 20px 0; /* Space between main headings */
+    .explore-button {
+      font-size: 24px; /* Font size for button */
+      padding: 10px 20px; /* Padding for the button */
+      background-color: transparent; /* Transparent background */
+      border: 2px solid white; /* White border */
+      color: white; /* Text color */
+      text-decoration: none; /* Remove underline */
+      cursor: pointer; /* Pointer cursor */
+      border-radius: 5px; /* Rounded corners */
+    }
+    .explore-button:hover {
+      background-color: white; /* Change background on hover */
+      color: black; /* Change text color on hover */
     }
   </style>
 </head>
 <body>
-  <!-- Vimeo video background without controls -->
-  <iframe class="video-background" src="https://player.vimeo.com/video/1018681055?autoplay=1&muted=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-
   <div class="content">
-    <div class="main-text">Welcome to Utopia</div>
-    <div class="main-text">Explore our collections!</div>
+    <a href="page2.html" class="explore-button">ALIENS</a>
   </div>
 </body>
 </html>
