@@ -3,41 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Utopia</title>
+  <title>utopia</title>
   <style>
+    /* Background image and styling */
     body {
       background: url('https://i.ibb.co/HhqzNkm/xx.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: white;
       margin: 0;
       font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
     }
-
+    
+    /* Logo styling */
     .logo {
       position: absolute;
       top: 20px;
       left: 20px;
-      width: 70px; /* Adjust size as needed */
+      width: 70px; /* Increase size if needed */
     }
-
-    .nav-menu {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-
-    .nav-menu a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-      font-size: 16px;
-    }
-
+    
+    /* Centered button styling */
     .explore-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       font-size: 24px;
       color: white;
       background: none;
@@ -46,50 +34,73 @@
       cursor: pointer;
       text-decoration: none;
       transition: background 0.3s;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-
+    
     .explore-btn:hover {
       background-color: white;
       color: black;
     }
-
+    
+    /* Clock styling */
     .clock {
       position: absolute;
       top: 20px;
-      right: 100px;
+      right: 20px;
+      font-size: 24px;
+    }
+
+    /* Navigation links at the bottom right */
+    .navigation {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
       font-size: 18px;
+    }
+    
+    .navigation a {
       color: white;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+    
+    .navigation a:hover {
+      text-decoration: underline;
     }
   </style>
   <script>
-    // JavaScript for the clock display
-    function updateClock() {
+    // JavaScript for updating the clock in real-time
+    function updateTime() {
+      const clock = document.getElementById("clock");
       const now = new Date();
       const hours = String(now.getHours()).padStart(2, '0');
       const minutes = String(now.getMinutes()).padStart(2, '0');
       const seconds = String(now.getSeconds()).padStart(2, '0');
-      const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
-      const date = now.toDateString();
-      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}:${milliseconds} ${date}`;
+      clock.textContent = `${hours}:${minutes}:${seconds}`;
     }
-    setInterval(updateClock, 1); // Update every millisecond
+    
+    setInterval(updateTime, 1000); // Update every second
+    window.onload = updateTime;
   </script>
 </head>
 <body>
   <!-- Logo -->
   <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo">
 
-  <!-- Navigation Menu -->
-  <div class="nav-menu">
+  <!-- Centered button -->
+  <a href="page2.html" class="explore-btn">ALIENS</a>
+  
+  <!-- Clock -->
+  <div id="clock" class="clock"></div>
+
+  <!-- Navigation links -->
+  <div class="navigation">
     <a href="#faq">FAQ</a>
     <a href="#about">About</a>
     <a href="#app">App</a>
   </div>
-
-  <!-- Explore Button -->
-  <a href="page2.html" class="explore-btn">ALIENS</a>
-
-  <!-- Clock Display -->
-  <div id="clock" class="clock"></div>
 </body>
 </html>
