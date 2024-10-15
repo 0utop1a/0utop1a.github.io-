@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>utopia</title>
   <style>
-    /* Background image and styling */
+    /* General styling */
     body {
       background: url('https://i.ibb.co/HhqzNkm/xx.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -14,16 +14,21 @@
       color: white;
       text-align: center;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    
+
     /* Logo styling */
     .logo {
       position: absolute;
       top: 20px;
       left: 20px;
-      width: 70px; /* Increase size if needed */
+      width: 70px; /* Adjust size as needed */
     }
-    
+
     /* Centered button styling */
     .explore-btn {
       font-size: 24px;
@@ -31,73 +36,66 @@
       background: none;
       border: 2px solid white;
       padding: 10px 20px;
-      cursor: pointer;
       text-decoration: none;
+      cursor: pointer;
       transition: background 0.3s;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
     }
-    
     .explore-btn:hover {
       background-color: white;
       color: black;
     }
-    
+
     /* Clock styling */
     .clock {
       position: absolute;
       top: 20px;
       right: 20px;
-      font-size: 24px;
+      font-size: 18px;
     }
 
-    /* Navigation links at the bottom right */
-    .navigation {
+    /* Navigation menu styling */
+    .nav-links {
       position: absolute;
       bottom: 20px;
       right: 20px;
-      font-size: 18px;
+      font-size: 14px;
     }
-    
-    .navigation a {
+    .nav-links a {
       color: white;
+      margin-left: 15px;
       text-decoration: none;
-      margin-left: 10px;
     }
-    
-    .navigation a:hover {
+    .nav-links a:hover {
       text-decoration: underline;
     }
   </style>
   <script>
-    // JavaScript for updating the clock in real-time
-    function updateTime() {
-      const clock = document.getElementById("clock");
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      clock.textContent = `${hours}:${minutes}:${seconds}`;
+    // Mobile redirect script
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      window.location.href = "mobile.html"; // Redirect to mobile version
     }
-    
+
+    // Clock function
+    function updateTime() {
+      const now = new Date();
+      const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      document.getElementById('clock').textContent = time;
+    }
     setInterval(updateTime, 1000); // Update every second
-    window.onload = updateTime;
   </script>
 </head>
 <body>
   <!-- Logo -->
   <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo">
-
-  <!-- Centered button -->
+  
+  <!-- Button -->
   <a href="page2.html" class="explore-btn">ALIENS</a>
   
   <!-- Clock -->
   <div id="clock" class="clock"></div>
-
-  <!-- Navigation links -->
-  <div class="navigation">
+  
+  <!-- Navigation Links -->
+  <div class="nav-links">
     <a href="#faq">FAQ</a>
     <a href="#about">About</a>
     <a href="#app">App</a>
