@@ -29,17 +29,18 @@
       margin-top: 20px;
     }
 
-    /* Each product box with flex layout */
+    /* Each product box with fit-content */
     .product-box {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
       background-color: #222;
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s;
+      width: fit-content; /* Adapt width to content */
+      height: fit-content; /* Adapt height to content */
     }
 
     .product-box:hover {
