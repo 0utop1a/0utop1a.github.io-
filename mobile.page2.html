@@ -1,63 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>utopia Page 2</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            margin: 0;
-            padding: 20px;
-            font-family: 'Courier New', Courier, monospace; /* Typewriter font */
-            font-size: 16px; /* Smaller base font size */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRODUCTS</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
 
-        .main-text {
-            font-size: 20px; /* Smaller font size for main headings */
-            margin-top: 20px; /* Space between each main heading */
-        }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #f5f5f5;
+    }
 
-        .subtext {
-            font-size: 14px; /* Smaller font size for subtext */
-            margin-top: 5px; /* Less space between main text and subtext */
-        }
+    /* Grid for product previews */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 10px;
+      margin-top: 20px;
+    }
 
-        /* Animation for clickable text */
-        .clickable {
-            color: white;
-            text-decoration: underline;
-            cursor: pointer;
-            animation: fadeColor 4s infinite;
-        }
+    /* Each product box with flex layout */
+    .product-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #222;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
 
-        @keyframes fadeColor {
-            0% { color: skyblue; }
-            50% { color: white; }
-            100% { color: skyblue; }
-        }
-    </style>
+    .product-box:hover {
+      transform: scale(1.05);
+    }
+
+    .product-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .buy-button {
+      padding: 10px 20px;
+      color: white;
+      background-color: #ff6347;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    .buy-button:hover {
+      background-color: #ff4500;
+    }
+  </style>
 </head>
 <body>
-    <div class="main-text">ALIENS-T</div>
-    <div class="subtext">FEBRUARY 7th</div>
+  <h1>ALIENS COLLECTION</h1>
 
-    <div class="main-text">AL1ENS</div>
-    <div class="subtext">JULY 4th</div>
-
-    <div class="main-text">ALIEN2</div>
-    <div class="subtext">JULY 11th</div>
-
-    <div class="main-text">ALI3NS</div>
-    <div class="subtext">AUGUST 1th</div>
-
-    <div class="main-text">A4IENS</div>
-    <div class="subtext">AUGUST 8th</div>
-
-    <!-- New clickable animated main text -->
-    <div class="main-text clickable">
-        <a href="https://foundation.app/" style="color: inherit; text-decoration: none;">25COLLECTION OUT NOW</a>
+  <div class="product-grid">
+    <!-- Product 1 -->
+    <div class="product-box">
+      <img src="https://i.ibb.co/jZG1yTK/Whats-App-Image-2024-06-01-at-01-21-30-47f9ed0d.jpg" alt="ALIENS-T" class="product-image">
+      <button class="buy-button">Available February 14, 2025</button>
     </div>
+
+    <!-- Product 2 -->
+    <div class="product-box">
+      <img src="https://i.ibb.co/F6tyD5J/Screenshot-2024-10-10-224425.png" alt="Al1ENS" class="product-image">
+      <button class="buy-button">Available July 4th, 2025</button>
+    </div>
+
+    <!-- Add more products as needed -->
+  </div>
 </body>
 </html>
