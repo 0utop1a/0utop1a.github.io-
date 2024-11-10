@@ -41,23 +41,32 @@
       border-radius: 10px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s;
+      height: 350px; /* Ensures consistent box height */
     }
 
     .product-box:hover {
       transform: scale(1.05);
     }
 
+    /* Image container with fixed height */
     .product-image {
       max-width: 100%;
-      height: auto;
+      height: 180px; /* Fixed height to keep consistent spacing */
+      object-fit: cover; /* Ensures image fits within fixed height */
       border-radius: 8px;
       margin-bottom: 10px;
     }
 
+    .product-title {
+      font-size: 18px;
+      margin: 5px 0 10px;
+      color: white;
+    }
+
     .buy-button {
       padding: 10px 20px;
-      color: black; /* Set font color to black */
-      background-color: white; /* Set button background to white */
+      background-color: white;
+      color: black;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -67,7 +76,8 @@
     }
 
     .buy-button:hover {
-      background-color: #ffa500; /* Change to orange on hover */
+      background-color: #ff4500;
+      color: white;
     }
   </style>
 </head>
@@ -78,24 +88,28 @@
     <!-- Product 1 -->
     <div class="product-box">
       <img src="https://i.ibb.co/jZG1yTK/Whats-App-Image-2024-06-01-at-01-21-30-47f9ed0d.jpg" alt="ALIENS-T" class="product-image">
+      <div class="product-title">ALIENS-T</div>
       <button class="buy-button">Available February 14, 2025</button>
     </div>
 
     <!-- Product 2 -->
     <div class="product-box">
       <img src="https://i.ibb.co/KV3t4sx/ALIENS2-TEST3.jpg" alt="Al1ENS" class="product-image">
+      <div class="product-title">Al1ENS</div>
       <button class="buy-button">Available July 4, 2025</button>
     </div>
 
     <!-- Product 3 -->
     <div class="product-box">
       <img src="https://i.ibb.co/nPhXKbn/huhu.png" alt="ALIEN2" class="product-image">
+      <div class="product-title">ALIEN2</div>
       <button class="buy-button">Available July 11, 2025</button>
     </div>
 
     <!-- Product 4 -->
     <div class="product-box">
       <img src="https://i.ibb.co/h7qyBxd/Untitled-Project-J.jpg" alt="AlI3NS" class="product-image">
+      <div class="product-title">ALI3NS</div>
       <button class="buy-button">Available August 1, 2025</button>
     </div>
   </div>
