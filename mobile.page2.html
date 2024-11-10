@@ -30,18 +30,17 @@
       margin-top: 20px;
     }
 
-    /* Each product box with fit-content */
+    /* Each product box with flex layout */
     .product-box {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
       background-color: #222;
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s;
-      width: fit-content; /* Adapt width to content */
-      height: fit-content; /* Adapt height to content */
     }
 
     .product-box:hover {
@@ -57,8 +56,8 @@
 
     .buy-button {
       padding: 10px 20px;
-      color: white;
-      background-color: #ff6347;
+      color: black; /* Set font color to black */
+      background-color: white; /* Set button background to white */
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -68,7 +67,7 @@
     }
 
     .buy-button:hover {
-      background-color: #ff4500;
+      background-color: #ffa500; /* Change to orange on hover */
     }
   </style>
 </head>
@@ -84,11 +83,33 @@
 
     <!-- Product 2 -->
     <div class="product-box">
-      <img src="https://i.ibb.co/F6tyD5J/Screenshot-2024-10-10-224425.png" alt="Al1ENS" class="product-image">
-      <button class="buy-button">Available July 4th, 2025</button>
+      <img src="https://i.ibb.co/KV3t4sx/ALIENS2-TEST3.jpg" alt="Al1ENS" class="product-image">
+      <button class="buy-button">Available July 4, 2025</button>
     </div>
 
-    <!-- Add more products as needed -->
+    <!-- Product 3 -->
+    <div class="product-box">
+      <img src="https://i.ibb.co/nPhXKbn/huhu.png" alt="ALIEN2" class="product-image">
+      <button class="buy-button">Available July 11, 2025</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-box">
+      <img src="https://i.ibb.co/h7qyBxd/Untitled-Project-J.jpg" alt="AlI3NS" class="product-image">
+      <button class="buy-button">Available August 1, 2025</button>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-box">
+      <img src="https://i.ibb.co/F6tyD5J/Screenshot-2024-10-10-224425.png" alt="ALI4NS" class="product-image">
+      <button class="buy-button">Available September 5, 2025</button>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-box">
+      <img src="https://i.ibb.co/nrPNZGj/ALIENS5.png" alt="ALI5NS" class="product-image">
+      <button class="buy-button">Available October 10, 2025</button>
+    </div>
   </div>
 </body>
 </html>
