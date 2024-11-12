@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALIENS COLLECTION</title>
     <!-- GLightbox CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css">
     <style>
         /* Basic styling for the layout */
         body {
@@ -98,13 +98,15 @@
     </div>
 
     <!-- GLightbox JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
     <script>
-        const lightbox = GLightbox({
-            selector: '[data-glightbox]',
-            touchNavigation: true,
-            loop: true,
-            autoplayVideos: true
+        document.addEventListener('DOMContentLoaded', function () {
+            const lightbox = GLightbox({
+                selector: '[data-glightbox]',
+                touchNavigation: true,
+                loop: true,
+                autoplayVideos: true
+            });
         });
     </script>
     
