@@ -5,87 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALIENS COLLECTION</title>
     <style>
-        /* Basic Reset */
-        * {
+        /* Basic styling for the layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
-        body {
-            background-color: #111;
-            color: #fff;
-            font-family: Arial, sans-serif;
+        h1 {
+            font-size: 2.5em; /* Increased size slightly */
+            margin-top: 20px;
+            letter-spacing: 1.5px;
+        }
+        .product-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            font-weight: normal;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-
-        .product-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            max-width: 1200px;
-            width: 100%;
-            padding: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
-
         .product-box {
-            position: relative;
-            overflow: hidden;
-            border: 2px solid #333;
-            transition: border-color 0.3s;
+            background-color: #333;
+            border-radius: 10px;
+            width: 200px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        .product-box:hover {
-            border-color: #888;
-        }
-
         .product-image {
             width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s;
+            border-radius: 10px;
+            cursor: pointer;
         }
-
-        .product-box:hover .product-image {
-            transform: scale(1.05);
-        }
-
         .product-name {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            font-size: 1.1em;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            opacity: 0;
-            transition: opacity 0.3s;
+            font-size: 1.2em;
+            margin-top: 10px;
         }
-
-        .product-box:hover .product-name {
-            opacity: 1;
+        .buy-button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            border: none;
+            background-color: #fff;
+            color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
         }
-
-        .availability {
-            font-size: 0.9em;
-            color: #888;
-            margin-top: 5px;
-        }
-
     </style>
 </head>
 <body>
@@ -93,30 +59,19 @@
     <h1>ALIENS COLLECTION</h1>
     
     <div class="product-container">
-        <!-- Product 1 -->
-        <div class="product-box">
-            <img src="https://i.ibb.co/jZG1yTK/Whats-App-Image-2024-06-01-at-01-21-30-47f9ed0d.jpg" alt="ALIENS-T" class="product-image">
-            <div class="product-name">ALIENS-T</div>
-        </div>
-        
-        <!-- Product 2 -->
-        <div class="product-box">
-            <img src="https://i.ibb.co/KV3t4sx/ALIENS2-TEST3.jpg" alt="AL1ENS" class="product-image">
-            <div class="product-name">AL1ENS</div>
-        </div>
-        
-        <!-- Product 3 -->
-        <div class="product-box">
-            <img src="https://i.ibb.co/nPhXKbn/huhu.png" alt="ALIEN2" class="product-image">
-            <div class="product-name">ALIEN2</div>
-        </div>
-        
-        <!-- Product 4 -->
-        <div class="product-box">
-            <img src="https://i.ibb.co/h7qyBxd/Untitled-Project-J.jpg" alt="ALI3NS" class="product-image">
-            <div class="product-name">ALI3NS</div>
-        </div>
+        <!-- Product Boxes Here -->
     </div>
 
+    <!-- JavaScript for GLightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: '[data-glightbox]',
+            touchNavigation: true,
+            loop: true,
+            autoplayVideos: true
+        });
+    </script>
+    
 </body>
 </html>
