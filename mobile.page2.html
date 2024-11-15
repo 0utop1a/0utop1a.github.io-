@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALIENS COLLECTION</title>
+    
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
     <style>
         /* Basic Reset */
         * {
@@ -25,7 +29,7 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2.4em;
             font-weight: normal;
             margin-bottom: 20px;
             letter-spacing: 2px;
@@ -79,13 +83,6 @@
         .product-box:hover .product-name {
             opacity: 1;
         }
-
-        .availability {
-            font-size: 0.9em;
-            color: #888;
-            margin-top: 5px;
-        }
-
     </style>
 </head>
 <body>
@@ -95,28 +92,38 @@
     <div class="product-container">
         <!-- Product 1 -->
         <div class="product-box">
-            <img src="https://i.ibb.co/jZG1yTK/Whats-App-Image-2024-06-01-at-01-21-30-47f9ed0d.jpg" alt="ALIENS-T" class="product-image">
+            <a href="https://i.ibb.co/jZG1yTK/Whats-App-Image-2024-06-01-at-01-21-30-47f9ed0d.jpg" data-lightbox="aliens" data-title="ALIENS-T">
+                <img src="https://i.ibb.co/jZG1yTK/Whats-App-Image-2024-06-01-at-01-21-30-47f9ed0d.jpg" alt="ALIENS-T" class="product-image">
+            </a>
             <div class="product-name">ALIENS-T</div>
         </div>
         
         <!-- Product 2 -->
         <div class="product-box">
-            <img src="https://i.ibb.co/KV3t4sx/ALIENS2-TEST3.jpg" alt="AL1ENS" class="product-image">
+            <a href="https://i.ibb.co/KV3t4sx/ALIENS2-TEST3.jpg" data-lightbox="aliens" data-title="AL1ENS">
+                <img src="https://i.ibb.co/KV3t4sx/ALIENS2-TEST3.jpg" alt="AL1ENS" class="product-image">
+            </a>
             <div class="product-name">AL1ENS</div>
         </div>
         
         <!-- Product 3 -->
         <div class="product-box">
-            <img src="https://i.ibb.co/nPhXKbn/huhu.png" alt="ALIEN2" class="product-image">
+            <a href="https://i.ibb.co/nPhXKbn/huhu.png" data-lightbox="aliens" data-title="ALIEN2">
+                <img src="https://i.ibb.co/nPhXKbn/huhu.png" alt="ALIEN2" class="product-image">
+            </a>
             <div class="product-name">ALIEN2</div>
         </div>
         
         <!-- Product 4 -->
         <div class="product-box">
-            <img src="https://i.ibb.co/h7qyBxd/Untitled-Project-J.jpg" alt="ALI3NS" class="product-image">
+            <a href="https://i.ibb.co/h7qyBxd/Untitled-Project-J.jpg" data-lightbox="aliens" data-title="ALI3NS">
+                <img src="https://i.ibb.co/h7qyBxd/Untitled-Project-J.jpg" alt="ALI3NS" class="product-image">
+            </a>
             <div class="product-name">ALI3NS</div>
         </div>
     </div>
 
+    <!-- Lightbox2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>
