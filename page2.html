@@ -45,6 +45,7 @@
             overflow: hidden;
             border: 2px solid #333;
             transition: border-color 0.3s;
+            cursor: pointer;
         }
 
         .product-box:hover {
@@ -80,12 +81,57 @@
             opacity: 1;
         }
 
-        .availability {
-            font-size: 0.9em;
-            color: #888;
-            margin-top: 5px;
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
 
+        .modal-content {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: left;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            margin-bottom: 15px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .close-btn:hover {
+            color: #f00;
+        }
     </style>
 </head>
 <body>
@@ -94,29 +140,54 @@
     
     <div class="product-container">
         <!-- Product 1 -->
-        <div class="product-box">
+        <div class="product-box" onclick="openModal('ALIENS-T', '50$', 'Worldwide shipping available.')">
             <img src="https://i.ibb.co/jZG1yTK/Whats-App-Image-2024-06-01-at-01-21-30-47f9ed0d.jpg" alt="ALIENS-T" class="product-image">
             <div class="product-name">ALIENS-T</div>
         </div>
         
         <!-- Product 2 -->
-        <div class="product-box">
+        <div class="product-box" onclick="openModal('AL1ENS', '60$', 'Free shipping in USA.')">
             <img src="https://i.ibb.co/KV3t4sx/ALIENS2-TEST3.jpg" alt="AL1ENS" class="product-image">
             <div class="product-name">AL1ENS</div>
         </div>
         
         <!-- Product 3 -->
-        <div class="product-box">
+        <div class="product-box" onclick="openModal('ALIEN2', '55$', 'International shipping rates apply.')">
             <img src="https://i.ibb.co/nPhXKbn/huhu.png" alt="ALIEN2" class="product-image">
             <div class="product-name">ALIEN2</div>
         </div>
         
         <!-- Product 4 -->
-        <div class="product-box">
+        <div class="product-box" onclick="openModal('ALI3NS', '70$', 'Free returns within 30 days.')">
             <img src="https://i.ibb.co/h7qyBxd/Untitled-Project-J.jpg" alt="ALI3NS" class="product-image">
             <div class="product-name">ALI3NS</div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <h2 id="modalTitle"></h2>
+            <p id="modalPrice"></p>
+            <p id="modalDetails"></p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, price, details) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalPrice').textContent = "Price: " + price;
+            document.getElementById('modalDetails').textContent = details;
+            document.getElementById('modalImage').src = event.target.src;
+            document.getElementById('productModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
