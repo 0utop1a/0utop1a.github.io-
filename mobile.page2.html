@@ -52,6 +52,11 @@
             border-color: #888;
         }
 
+        .product-box:focus {
+            outline: none !important;
+            border-color: #888; /* Optional to mimic hover effect */
+        }
+
         .product-image {
             width: 100%;
             height: auto;
@@ -81,16 +86,13 @@
             opacity: 1;
         }
 
-        /* Remove focus outlines globally */
-        :focus {
-            outline: none !important;
-            box-shadow: none !important;
-        }
-
-        /* Mobile-specific fixes */
-        .product-box:focus {
-            outline: none !important;
-            box-shadow: none !important;
+        /* Remove Samsung Internet focus styles */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .product-box:focus {
+                outline: none !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
         }
 
         /* Modal Styles */
