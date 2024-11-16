@@ -12,10 +12,11 @@
             box-sizing: border-box;
         }
 
-        /* Remove focus outlines globally */
+        /* Remove focus outlines for all browsers */
         :focus {
             outline: none !important;
             box-shadow: none !important;
+            -webkit-tap-highlight-color: transparent; /* Removes blue highlight on mobile browsers */
         }
 
         body {
@@ -145,32 +146,24 @@
     <h1>ALIENS COLLECTION</h1>
     
     <div class="product-container">
-        <!-- Product 1 -->
-        <div class="product-box" onclick="openModal('ALIENS-T', '8.99$', 'SHIPPING AVAILABLE FEBRUARY 14th - 28th.')">
+        <div class="product-box" onclick="openModal('ALIENS-T', '8.99$', 'SHIPPING AVAILABLE February 14th - 28th.')">
             <img src="https://i.ibb.co/jZG1yTK/Whats-App-Image-2024-06-01-at-01-21-30-47f9ed0d.jpg" alt="ALIENS-T" class="product-image">
             <div class="product-name">ALIENS-T</div>
         </div>
-        
-        <!-- Product 2 -->
-        <div class="product-box" onclick="openModal('AL1ENS', '21.99$', 'AVAILABLE JULY 4TH .')">
+        <div class="product-box" onclick="openModal('AL1ENS', '30$', 'AVAILABLE JULY 4th')">
             <img src="https://i.ibb.co/KV3t4sx/ALIENS2-TEST3.jpg" alt="AL1ENS" class="product-image">
             <div class="product-name">AL1ENS</div>
         </div>
-        
-        <!-- Product 3 -->
-        <div class="product-box" onclick="openModal('ALIEN2', '22.99$', 'AVAILABLE JULY 11th.')">
+        <div class="product-box" onclick="openModal('ALIEN2', '40$', 'AVAILABLE JULY 11th')">
             <img src="https://i.ibb.co/nPhXKbn/huhu.png" alt="ALIEN2" class="product-image">
             <div class="product-name">ALIEN2</div>
         </div>
-        
-        <!-- Product 4 -->
-        <div class="product-box" onclick="openModal('ALI3NS', '33.99$', 'FREE RETURNS WITHIN 30 DAY, AVAILABLE AUGUST 1st.')">
+        <div class="product-box" onclick="openModal('ALI3NS', '40$', 'Free returns within 30 days, AVAILABLE AUGUST 1st')">
             <img src="https://i.ibb.co/h7qyBxd/Untitled-Project-J.jpg" alt="ALI3NS" class="product-image">
             <div class="product-name">ALI3NS</div>
         </div>
     </div>
 
-    <!-- Modal -->
     <div class="modal" id="productModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
