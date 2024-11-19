@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALIENS COLLECTION</title>
     <style>
-        /* Basic Reset */
+        /* Reset Styles */
         * {
             margin: 0;
             padding: 0;
@@ -93,40 +93,35 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            overflow: hidden;
         }
 
         .modal-content {
-            position: relative;
             display: flex;
-            flex-wrap: nowrap;
             overflow: hidden;
-            width: 90%;
-            max-width: 700px;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
             background-color: #222;
-            border-radius: 8px;
+            position: relative;
         }
 
         .slide {
             min-width: 100%;
             transition: transform 0.5s ease-in-out;
-            padding: 20px;
             text-align: center;
-            color: #fff;
         }
 
         .slide img {
-            width: 80%;
-            margin: 0 auto 15px;
-            border-radius: 5px;
+            width: 100%;
+            border-radius: 10px 10px 0 0;
         }
 
         .slide h2 {
-            margin-bottom: 10px;
+            margin: 10px 0;
         }
 
         .slide p {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .close-btn {
@@ -142,37 +137,31 @@
             color: #f00;
         }
 
-        .nav-arrow {
+        .arrow {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            border: none;
             font-size: 2em;
+            color: #fff;
             cursor: pointer;
-            z-index: 1001;
-            padding: 5px 15px;
-            border-radius: 5px;
+            z-index: 10;
         }
 
-        .nav-arrow:hover {
-            background: rgba(255, 255, 255, 0.5);
+        .arrow:hover {
+            color: #f00;
         }
 
-        .prev {
+        .arrow.left {
             left: 10px;
         }
 
-        .next {
+        .arrow.right {
             right: 10px;
         }
     </style>
 </head>
 <body>
-
     <h1>ALIENS COLLECTION</h1>
-    
     <div class="product-container">
         <div class="product-box" onclick="openModal(0)">
             <img src="https://i.ibb.co/jZG1yTK/Whats-App-Image-2024-06-01-at-01-21-30-47f9ed0d.jpg" alt="ALIENS-T" class="product-image">
@@ -193,35 +182,35 @@
     </div>
 
     <div class="modal" id="productModal">
-        <button class="nav-arrow prev" onclick="changeSlide(-1)">&#8249;</button>
         <div class="modal-content" id="carousel">
             <div class="slide">
                 <img src="https://i.ibb.co/jZG1yTK/Whats-App-Image-2024-06-01-at-01-21-30-47f9ed0d.jpg" alt="ALIENS-T">
                 <h2>ALIENS-T</h2>
-                <p>Price: 10$</p>
+                <p>Price: $10</p>
                 <p>Shipping available February 14th - 28th.</p>
             </div>
             <div class="slide">
                 <img src="https://i.ibb.co/KV3t4sx/ALIENS2-TEST3.jpg" alt="AL1ENS">
                 <h2>AL1ENS</h2>
-                <p>Price: 60$</p>
-                <p>Free shipping in USA.</p>
+                <p>Price: $60</p>
+                <p>Free shipping in the USA.</p>
             </div>
             <div class="slide">
                 <img src="https://i.ibb.co/nPhXKbn/huhu.png" alt="ALIEN2">
                 <h2>ALIEN2</h2>
-                <p>Price: 55$</p>
+                <p>Price: $55</p>
                 <p>International shipping rates apply.</p>
             </div>
             <div class="slide">
                 <img src="https://i.ibb.co/h7qyBxd/Untitled-Project-J.jpg" alt="ALI3NS">
                 <h2>ALI3NS</h2>
-                <p>Price: 70$</p>
+                <p>Price: $70</p>
                 <p>Free returns within 30 days.</p>
             </div>
         </div>
-        <button class="nav-arrow next" onclick="changeSlide(1)">&#8250;</button>
         <span class="close-btn" onclick="closeModal()">&times;</span>
+        <span class="arrow left" onclick="changeSlide(-1)">&#8249;</span>
+        <span class="arrow right" onclick="changeSlide(1)">&#8250;</span>
     </div>
 
     <script>
@@ -244,11 +233,10 @@
         }
 
         function updateCarousel() {
-            const carousel = document.getElementById('carousel');
+            const slides = document.querySelectorAll('.slide');
             const offset = -currentSlide * 100;
-            carousel.style.transform = `translateX(${offset}%)`;
+            document.getElementById('carousel').style.transform = `translateX(${offset}%)`;
         }
     </script>
-
 </body>
 </html>
