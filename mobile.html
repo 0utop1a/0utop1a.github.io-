@@ -11,50 +11,102 @@
             padding: 0;
             font-family: 'Courier New', Courier, monospace;
             color: white;
-            overflow: hidden; /* Prevent scrollbars */
-            background: url('https://i.ibb.co/g9t4LFs/NARNIAH.jpg') no-repeat center center; /* Background image */
-            background-size: cover; /* Ensure the image covers the entire viewport */
-            height: 100vh; /* Full height */
+            overflow: hidden;
+            background: url('https://i.ibb.co/g9t4LFs/NARNIAH.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
         }
         .content {
-            position: absolute; /* Position absolute to center */
-            top: 50%; /* Move to the middle vertically */
-            left: 50%; /* Move to the middle horizontally */
-            transform: translate(-50%, -50%); /* Center the element */
-            z-index: 1; /* Above the background */
-            text-align: center; /* Center text */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
         }
         .explore-button {
-            font-size: 24px; /* Font size for button */
-            padding: 15px 30px; /* Padding for the button */
-            background-color: transparent; /* Transparent background */
-            border: 2px solid white; /* White border */
-            color: white; /* Text color */
-            text-decoration: none; /* Remove underline */
-            cursor: pointer; /* Pointer cursor */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
-            margin-top: 20px; /* Space above button */
+            font-size: 24px;
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 20px;
         }
         .explore-button:hover {
-            background-color: white; /* Change background on hover */
-            color: black; /* Change text color on hover */
+            background-color: white;
+            color: black;
         }
         .logo {
-            position: absolute; /* Position logo */
-            top: 10px; /* Distance from the top */
-            left: 10px; /* Distance from the left */
-            width: 120px; /* Larger logo size */
-            height: auto; /* Maintain aspect ratio */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 120px;
+            height: auto;
+        }
+        .running-text {
+            background-color: #000000;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            padding: 10px 0;
+        }
+        .running-text-container {
+            display: flex;
+            animation: marquee 40s linear infinite;
+        }
+        .running-text-content {
+            display: inline-flex;
+            align-items: center;
+        }
+        .running-text-content span {
+            margin-right: 30px;
+            color: #ffffff !important;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        .running-text-content span.runline {
+            width: 2px;
+            height: 10px;
+            background: #d1d1d1 !important;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        @media screen and (max-width: 500px) {
+            .running-text-content span {
+                margin-right: 20px;
+            }
+            .running-text-container {
+                animation: marquee 12s linear infinite;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Logo -->
+    <div class="running-text">
+        <div class="running-text-container">
+            <div class="running-text-content">
+                <span>STORE OPENS MAY 25TH</span>
+                <span class="runline"></span>
+                <span>STORE OPENS MAY 25TH</span>
+                <span class="runline"></span>
+                <span>STORE OPENS MAY 25TH</span>
+                <span class="runline"></span>
+                <span>STORE OPENS MAY 25TH</span>
+                <span class="runline"></span>
+                <span>STORE OPENS MAY 25TH</span>
+                <span class="runline"></span>
+                <span>STORE OPENS MAY 25TH</span>
+            </div>
+        </div>
+    </div>
     <img src="https://i.ibb.co/VxcMSXC/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo">
-
     <div class="content">
-        <!-- Explore button linking to page2 -->
         <a href="mobile.page2.html" class="explore-button">ALIENS</a>
     </div>
 </body>
