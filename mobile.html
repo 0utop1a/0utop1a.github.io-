@@ -1,37 +1,113 @@
-<h1 class="header__heading" style="text-align: center;">
-  <a href="/" class="header__heading-link link link--text focus-inset">
-    <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png"
-      alt="YOUR LOGO"
-      srcset="
-        https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png 50w,
-        https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png 100w,
-        https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png 150w,
-        https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png 200w,
-        https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png 250w,
-        https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png 300w,
-        https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png 400w,
-        https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png 500w"
-      width="200"
-      height="200"
-      class="header__heading-logo">
-  </a>
-</h1>
-
-<style>
-  .header__heading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  .header__heading-logo {
-    animation: logoAnimation 2s infinite alternate ease-in-out;
-  }
-
-  @keyframes logoAnimation {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
-  }
-</style>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>utopia</title>
+    <link rel="icon" href="https://0utop1a.github.io/0utop1a.github.io-/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            overflow: hidden;
+            background: url('https://i.ibb.co/g9t4LFs/NARNIAH.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
+        }
+        .explore-button {
+            font-size: 24px;
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 20px;
+        }
+        .explore-button:hover {
+            background-color: white;
+            color: black;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 120px;
+            height: auto;
+        }
+        .running-text {
+            background-color: #000000;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            padding: 10px 0;
+        }
+        .running-text-container {
+            display: flex;
+            animation: marquee 40s linear infinite;
+        }
+        .running-text-content {
+            display: inline-flex;
+            align-items: center;
+        }
+        .running-text-content span {
+            margin-right: 30px;
+            color: #ffffff !important;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        .running-text-content span.runline {
+            width: 2px;
+            height: 10px;
+            background: #d1d1d1 !important;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        @media screen and (max-width: 500px) {
+            .running-text-content span {
+                margin-right: 20px;
+            }
+            .running-text-container {
+                animation: marquee 12s linear infinite;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="running-text">
+        <div class="running-text-container">
+            <div class="running-text-content">
+                <span>STORE OPENS MAY 25TH</span>
+                <span class="runline"></span>
+                <span>STORE OPENS MAY 25TH</span>
+                <span class="runline"></span>
+                <span>STORE OPENS MAY 25TH</span>
+                <span class="runline"></span>
+                <span>STORE OPENS MAY 25TH</span>
+                <span class="runline"></span>
+                <span>STORE OPENS MAY 25TH</span>
+                <span class="runline"></span>
+                <span>STORE OPENS MAY 25TH</span>
+            </div>
+        </div>
+    </div>
+    <img src="https://i.ibb.co/VxcMSXC/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo">
+    <div class="content">
+        <a href="mobile.page2.html" class="explore-button">ALIENS</a>
+    </div>
+</body>
+</html>
