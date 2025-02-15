@@ -43,9 +43,11 @@
         .logo {
             position: absolute;
             top: 10px;
-            left: 10px;
+            left: 50%;
+            transform: translateX(-50%);
             width: 120px;
             height: auto;
+            animation: logoAnimation 2s infinite alternate ease-in-out;
         }
         .running-text {
             background-color: #000000;
@@ -76,6 +78,10 @@
         @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-100%); }
+        }
+        @keyframes logoAnimation {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1); }
         }
         @media screen and (max-width: 500px) {
             .running-text-content span {
