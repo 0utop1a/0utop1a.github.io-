@@ -46,7 +46,7 @@
             transform: translateX(-50%);
             width: 120px;
             height: auto;
-            animation: logoAnimation 2s infinite alternate ease-in-out;
+            animation: rotate-vert-center 2s linear infinite;
         }
         .running-text {
             background-color: #000000;
@@ -74,20 +74,40 @@
             height: 10px;
             background: #d1d1d1 !important;
         }
+
         @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-100%); }
         }
-        @keyframes logoAnimation {
-            0% { transform: translateX(-50%) scale(1); }
-            100% { transform: translateX(-50%) scale(1.1); }
-        }
+
         @media screen and (max-width: 500px) {
             .running-text-content span {
                 margin-right: 20px;
             }
             .running-text-container {
                 animation: marquee 12s linear infinite;
+            }
+        }
+
+        /* Animista animation: rotate-vert-center */
+        @-webkit-keyframes rotate-vert-center {
+            0% {
+                -webkit-transform: rotateY(0);
+                        transform: rotateY(0);
+            }
+            100% {
+                -webkit-transform: rotateY(360deg);
+                        transform: rotateY(360deg);
+            }
+        }
+        @keyframes rotate-vert-center {
+            0% {
+                -webkit-transform: rotateY(0);
+                        transform: rotateY(0);
+            }
+            100% {
+                -webkit-transform: rotateY(360deg);
+                        transform: rotateY(360deg);
             }
         }
     </style>
@@ -110,7 +130,9 @@
             </div>
         </div>
     </div>
-    <img src="https://i.ibb.co/VxcMSXC/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo">
+
+    <img src="https://i.ibb.co/VxcMSXC/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo rotate-vert-center">
+
     <div class="content">
         <a href="mobile.page2.html" class="explore-button">ALIENS</a>
     </div>
