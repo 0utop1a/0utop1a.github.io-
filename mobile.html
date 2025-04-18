@@ -15,6 +15,7 @@
             background-color: black;
             height: 100vh;
         }
+
         .content {
             position: absolute;
             top: 50%;
@@ -23,6 +24,7 @@
             z-index: 1;
             text-align: center;
         }
+
         .explore-button {
             font-size: 24px;
             padding: 15px 30px;
@@ -35,19 +37,22 @@
             transition: background-color 0.3s, color 0.3s;
             margin-top: 20px;
         }
+
         .explore-button:hover {
             background-color: white;
             color: black;
         }
+
         .logo {
             position: absolute;
-            top: 10px;
+            top: 40px;
             left: 50%;
             transform: translateX(-50%);
             width: 120px;
             height: auto;
-            animation: rotate-vert-center 2s linear infinite;
+            animation: rotate-vert-center 6s linear infinite;
         }
+
         .running-text {
             background-color: #000000;
             overflow: hidden;
@@ -55,20 +60,24 @@
             position: relative;
             padding: 10px 0;
         }
+
         .running-text-container {
             display: flex;
             animation: marquee 40s linear infinite;
         }
+
         .running-text-content {
             display: inline-flex;
             align-items: center;
         }
+
         .running-text-content span {
             margin-right: 30px;
             color: #ffffff !important;
             font-size: 14px;
             text-transform: uppercase;
         }
+
         .running-text-content span.runline {
             width: 2px;
             height: 10px;
@@ -80,16 +89,6 @@
             100% { transform: translateX(-100%); }
         }
 
-        @media screen and (max-width: 500px) {
-            .running-text-content span {
-                margin-right: 20px;
-            }
-            .running-text-container {
-                animation: marquee 12s linear infinite;
-            }
-        }
-
-        /* Animista animation: rotate-vert-center */
         @-webkit-keyframes rotate-vert-center {
             0% {
                 -webkit-transform: rotateY(0);
@@ -100,6 +99,7 @@
                         transform: rotateY(360deg);
             }
         }
+
         @keyframes rotate-vert-center {
             0% {
                 -webkit-transform: rotateY(0);
@@ -110,28 +110,37 @@
                         transform: rotateY(360deg);
             }
         }
+
+        @media screen and (max-width: 500px) {
+            .running-text-content span {
+                margin-right: 20px;
+            }
+            .running-text-container {
+                animation: marquee 12s linear infinite;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="running-text">
         <div class="running-text-container">
             <div class="running-text-content">
-                <span>STORE OPENS MAY 25TH</span>
+                <span>STORE OPENS MAY 17TH</span>
                 <span class="runline"></span>
-                <span>STORE OPENS MAY 25TH</span>
+                <span>STORE OPENS MAY 17TH</span>
                 <span class="runline"></span>
-                <span>STORE OPENS MAY 25TH</span>
+                <span>STORE OPENS MAY 17TH</span>
                 <span class="runline"></span>
-                <span>STORE OPENS MAY 25TH</span>
+                <span>STORE OPENS MAY 17TH</span>
                 <span class="runline"></span>
-                <span>STORE OPENS MAY 25TH</span>
+                <span>STORE OPENS MAY 17TH</span>
                 <span class="runline"></span>
-                <span>STORE OPENS MAY 25TH</span>
+                <span>STORE OPENS MAY 17TH</span>
             </div>
         </div>
     </div>
 
-    <img src="https://i.ibb.co/VxcMSXC/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo rotate-vert-center">
+    <img src="https://i.ibb.co/VxcMSXC/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo">
 
     <div class="content">
         <a href="mobile.page2.html" class="explore-button">ALIENS</a>
