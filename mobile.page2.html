@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="https://0utop1a.github.io/0utop1a.github.io-/favicon.ico" />
     <style>
+      html, body {
+        background-color: #000;
+        color: white;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       .header {
         display: flex;
         justify-content: space-between;
@@ -15,18 +29,22 @@
         background-color: #111;
         color: white;
       }
+
       .menu {
         display: flex;
         gap: 20px;
       }
+
       .menu a {
         color: white;
         text-decoration: none;
       }
+
       .logo img {
         height: 70px;
         animation: spin 6s linear infinite;
       }
+
       @keyframes spin {
         0% {
           transform: rotateY(0deg);
@@ -35,18 +53,22 @@
           transform: rotateY(360deg);
         }
       }
+
       .icons {
         display: flex;
         gap: 20px;
       }
+
       .search-modal,
       .hamburger-menu {
-        display: none; /* You can customize these behaviors later */
+        display: none;
       }
+
       @media (max-width: 768px) {
         .menu {
           display: none;
         }
+
         .hamburger-menu {
           display: block;
         }
@@ -83,12 +105,4 @@
         </div>
         <a href="/cart">
           <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="#FFFFFF" clip-rule="evenodd">
-            <path d="M13.5 21c-.276 0-.5-.224-.5-.5s.224-.5.5-.5.5.224.5.5-.224.5-.5.5m0-2c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5m-6 2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5.5.224.5.5-.224.5-.5.5m0-2c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5m16.5-16h-2.964l-3.642 15h-13.321l-4.073-13.003h19.522l.728-2.997h3.75v1zm-22.581 2.997l3.393 11.003h11.794l2.674-11.003h-17.861z"></path>
-          </svg>
-        </a>
-      </div>
-    </header>
-
-    <!-- Rest of your page content goes here -->
-  </body>
-</html>
+            <path d="M13.5 21c-.276 0-.5-.224-.5-.5s.224-.5.5-.5.5.224.5.5-.224.5-.5.5m0-2c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5m-6 2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5.5.224.5.5-.224.5-.5.5m0-2c-.828 0-1.5.672-1.5 1
