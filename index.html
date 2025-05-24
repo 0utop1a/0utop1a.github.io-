@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>utopia</title>
-  
-  <!-- Favicon link -->
-  <link rel="icon" href="https://0utop1a.github.io/0utop1a.github.io-/favicon.ico" type="image/x-icon">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utopia</title>
+  <link rel="icon" href="https://0utop1a.github.io/0utop1a.github.io-/favicon.ico" type="image/x-icon" />
   <style>
     body {
-      background: url('https://i.ibb.co/HhqzNkm/xx.jpg') no-repeat center center fixed;
-      background-size: cover;
       margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
+      background-color: #000;
       color: white;
-      text-align: center;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
 
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 70px;
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin-bottom: 30px;
     }
 
     .explore-btn {
@@ -36,14 +41,22 @@
       color: white;
       background: none;
       border: 2px solid white;
-      padding: 10px 20px;
+      padding: 10px 30px;
       text-decoration: none;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, color 0.3s;
     }
+
     .explore-btn:hover {
       background-color: white;
       color: black;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 70px;
     }
 
     .clock {
@@ -59,11 +72,13 @@
       right: 20px;
       font-size: 14px;
     }
+
     .nav-links a {
       color: white;
       margin-left: 15px;
       text-decoration: none;
     }
+
     .nav-links a:hover {
       text-decoration: underline;
     }
@@ -86,9 +101,13 @@
   </script>
 </head>
 <body>
-  <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo">
-  <a href="page2.html" class="explore-btn">ALIENS</a>
+  <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo" />
   <div id="clock" class="clock"></div>
+  <div class="hero">
+    <h1>Welcome to Utopia</h1>
+    <p>Discover a new dimension of fashion, where creativity meets the cosmos.</p>
+    <a href="page2.html" class="explore-btn">ALIENS</a>
+  </div>
   <div class="nav-links">
     <a href="#faq">FAQ</a>
     <a href="#about">About</a>
