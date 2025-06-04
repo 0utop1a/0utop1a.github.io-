@@ -2,27 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utopia</title>
-  <link rel="icon" href="https://0utop1a.github.io/0utop1a.github.io-/favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UTOP1A</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background-color: #000;
       color: white;
-      overflow: hidden;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    a:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 40px 20px;
     }
 
     .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       text-align: center;
-      padding: 20px;
+      padding: 120px 20px 80px;
     }
 
     .hero h1 {
@@ -32,86 +41,179 @@
 
     .hero p {
       font-size: 20px;
-      max-width: 600px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      opacity: 0.8;
     }
 
-    .explore-btn {
-      font-size: 24px;
-      color: white;
-      background: none;
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
       border: 2px solid white;
-      padding: 10px 30px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      pointer-events: none;
     }
 
-    .explore-btn:hover {
+    .btn:hover {
       background-color: white;
       color: black;
     }
 
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 70px;
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 80px 20px;
+      background-color: #111;
     }
 
-    .clock {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 18px;
+    .feature {
+      max-width: 300px;
+      text-align: center;
     }
 
-    .nav-links {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
+    .feature h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      font-size: 16px;
+      opacity: 0.7;
+    }
+
+    .newsletter {
+      background-color: #111;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .newsletter h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .newsletter form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .newsletter input {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      width: 250px;
+    }
+
+    .newsletter button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      pointer-events: none;
+    }
+
+    .footer {
+      background-color: #000;
+      padding: 40px 20px;
       font-size: 14px;
+      text-align: center;
+      opacity: 0.7;
     }
 
-    .nav-links a {
-      color: white;
-      margin-left: 15px;
-      text-decoration: none;
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 40px;
     }
 
-    .nav-links a:hover {
-      text-decoration: underline;
+    .footer-column h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      margin: 5px 0;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-columns {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
-  <script>
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      window.location.href = "mobile.html";
-    }
-
-    function updateTime() {
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      const milliseconds = String(now.getMilliseconds()).padStart(3, '0').slice(0, 2);
-      const time = `${hours}:${minutes}:${seconds}:${milliseconds}`;
-      document.getElementById('clock').textContent = time;
-    }
-    setInterval(updateTime, 10);
-  </script>
 </head>
 <body>
-  <img src="https://i.postimg.cc/YqRX6JTj/1fbbdb74-113c-4a40-9caf-3ee1d830bb44-66c3ae0ccb8dd3-67838762-removebg.png" alt="Logo" class="logo" />
-  <div id="clock" class="clock"></div>
-  <div class="hero">
-    <h1>Welcome to Utopia</h1>
-    <p>Discover a new dimension of fashion, where creativity meets the cosmos.</p>
-    <a href="page2.html" class="explore-btn">ALIENS</a>
-  </div>
-  <div class="nav-links">
-    <a href="#faq">FAQ</a>
-    <a href="#about">About</a>
-    <a href="#app">App</a>
-  </div>
+
+  <header>
+    <h1>UTOP1A</h1>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to UTOP1A</h1>
+    <p>Explore the unknown. ALIENS collection out now.</p>
+    <div class="btn">ALIENS</div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h2>Next Drop</h2>
+      <p>Soon</p>
+    </div>
+    <div class="feature">
+      <h2>Contact</h2>
+      <p>Soon</p>
+    </div>
+    <div class="feature">
+      <h2>Info</h2>
+      <p>All rights reserved © 2025</p>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h3>Subscribe to our newsletter</h3>
+    <form>
+      <input type="email" placeholder="Your email" disabled />
+      <button type="submit" disabled>Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p>Soon</p>
+      </div>
+      <div class="footer-column">
+        <h4>Info</h4>
+        <a>Privacy Policy</a>
+        <a>Terms of Service</a>
+        <a>Returns</a>
+      </div>
+    </div>
+    <div>© 2025 UTOP1A. All rights reserved.</div>
+  </footer>
+
 </body>
 </html>
