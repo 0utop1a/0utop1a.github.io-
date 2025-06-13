@@ -3,217 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UTOP1A</title>
+  <title>ALIENS - Coming Soon</title>
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Chakra+Petch:wght@700&display=swap');
+
+    :root {
+      --primary-text-color: #e0e0e0;
+      --button-bg-color: #ffffff;
+      --button-text-color: #000000;
+      --glow-color: rgba(255, 255, 255, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
       margin: 0;
-      font-family: 'DM Sans', sans-serif;
+      padding: 0;
+      height: 100%;
+      width: 100%;
       background-color: #000;
-      color: white;
-      overflow-x: hidden;
+      color: var(--primary-text-color);
+      font-family: 'Roboto', sans-serif;
+      overflow: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px) translateX(-50%) rotate(-5deg);
+      }
+      50% {
+        transform: translateY(-20px) translateX(-50%) rotate(5deg);
+      }
+      100% {
+        transform: translateY(0px) translateX(-50%) rotate(-5deg);
+      }
+    }
+
+    @keyframes pulse-glow {
+      0% {
+        box-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
+      }
+      50% {
+        box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+      }
+      100% {
+        box-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .ufo {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      width: 100px;
+      height: auto;
+      animation: float 6s ease-in-out infinite;
+      filter: drop-shadow(0px 15px 10px rgba(0,0,0,0.4));
+    }
+
+    .top-left-info {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      animation-delay: 0.2s;
+    }
+
+    .counter {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .support-title {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .support-icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .support-icons img {
+      height: 24px;
+      filter: invert(100%);
+    }
+
+    .support-icons .diamond {
+      filter: none;
+      height: 30px;
+    }
+
+    .center-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .aliens-button {
+      background-color: var(--button-bg-color);
+      color: var(--button-text-color);
+      border: none;
+      border-radius: 50px;
+      padding: 15px 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-family: 'Arial Black', Gadget, sans-serif;
       cursor: default;
+      animation: pulse-glow 3s infinite ease-in-out;
     }
 
-    a:hover {
-      opacity: 0.8;
-      transition: opacity 0.3s ease;
-    }
-
-    header, footer {
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 120px 20px 80px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 40px;
-      opacity: 0.8;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 30px;
-      border: 2px solid white;
-      font-size: 18px;
+    .bottom-text {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2rem;
       font-weight: bold;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      pointer-events: none;
     }
 
-    .btn:hover {
-      background-color: white;
-      color: black;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      padding: 80px 20px;
-      background-color: #111;
-    }
-
-    .feature {
-      max-width: 300px;
-      text-align: center;
-    }
-
-    .feature h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      font-size: 16px;
-      opacity: 0.7;
-    }
-
-    .newsletter {
-      background-color: #111;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .newsletter h3 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .newsletter form {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .newsletter input {
-      padding: 10px;
-      font-size: 16px;
-      border: none;
-      outline: none;
+    .map-widget {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
       width: 250px;
+      height: 150px;
+      border: 1px solid #555;
+      border-radius: 5px;
+      overflow: hidden;
     }
 
-    .newsletter button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      background-color: white;
-      color: black;
-      font-weight: bold;
-      pointer-events: none;
-    }
-
-    .footer {
-      background-color: #000;
-      padding: 40px 20px;
-      font-size: 14px;
-      text-align: center;
-      opacity: 0.7;
-    }
-
-    .footer-columns {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 60px;
-      margin-bottom: 40px;
-    }
-
-    .footer-column h4 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .footer-column p,
-    .footer-column a {
-      margin: 5px 0;
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .footer-columns {
-        flex-direction: column;
-        align-items: center;
-      }
+    .top-right-icons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 40px;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <!-- UFO Image -->
+    <img src="https://i.imgur.com/Z2n4PjS.png" alt="Floating UFO" class="ufo" />
 
-  <header>
-    <h1>UTOP1A</h1>
-  </header>
-
-  <section class="hero">
-    <h1>Welcome to UTOP1A</h1>
-    <p>Explore the unknown. ALIENS collection out now.</p>
-    <div class="btn">ALIENS</div>
-  </section>
-
-  <section class="features">
-    <div class="feature">
-      <h2>Next Drop</h2>
-      <p>Soon</p>
-    </div>
-    <div class="feature">
-      <h2>Contact</h2>
-      <p>Soon</p>
-    </div>
-    <div class="feature">
-      <h2>Info</h2>
-      <p>All rights reserved © 2025</p>
-    </div>
-  </section>
-
-  <section class="newsletter">
-    <h3>Subscribe to our newsletter</h3>
-    <form>
-      <input type="email" placeholder="Your email" disabled />
-      <button type="submit" disabled>Subscribe</button>
-    </form>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-columns">
-      <div class="footer-column">
-        <h4>Contact</h4>
-        <p>Soon</p>
-      </div>
-      <div class="footer-column">
-        <h4>Info</h4>
-        <a>Privacy Policy</a>
-        <a>Terms of Service</a>
-        <a>Returns</a>
+    <!-- Top Left -->
+    <div class="top-left-info fade-in">
+      <div id="counter" class="counter">0</div>
+      <div class="support-title">SUPPORT ONLY:</div>
+      <div class="support-icons">
+        <img src="https://img.icons8.com/ios-filled/50/bitcoin.png" alt="Bitcoin" />
+        <img src="https://img.icons8.com/ios-filled/50/paypal.png" alt="PayPal" />
+        <img src="https://i.imgur.com/Js1V0xi.png" alt="W Icon" />
+        <img class="diamond" src="https://i.imgur.com/zsz0lGC.png" alt="Diamond" />
       </div>
     </div>
-    <div>© 2025 UTOP1A. All rights reserved.</div>
-  </footer>
 
+    <!-- Center Button -->
+    <div class="center-content fade-in">
+      <div class="aliens-button">ALIENS</div>
+    </div>
+
+    <!-- Bottom Message -->
+    <div class="bottom-text fade-in">
+      МАГАЗИН ОТКРОЕТСЯ ОЧЕНЬ СКОРО
+    </div>
+
+    <!-- Clickable Map -->
+    <a href="https://maps.google.com?q=121125+Bluebonnet+Rd,+La+Vernia,+TX+78121" target="_blank" class="map-widget fade-in">
+      <img src="https://i.imgur.com/79S2htz.png" alt="Map" width="100%" height="100%">
+    </a>
+
+    <!-- Top Right Icon -->
+    <img src="https://img.icons8.com/ios-filled/50/code.png" alt="Code Icon" class="top-right-icons fade-in" />
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      function animateCounter(elementId, start, end, duration) {
+        const element = document.getElementById(elementId);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          const currentNumber = Math.floor(progress * (end - start) + start);
+          element.innerHTML = currentNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+
+      animateCounter('counter', 0, 121125, 2000);
+    });
+  </script>
 </body>
 </html>
