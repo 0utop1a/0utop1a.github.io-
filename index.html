@@ -3,62 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ALIENS - Coming Soon</title>
+  <title>UTOP1A</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Chakra+Petch:wght@700&display=swap');
-
-    :root {
-      --primary-text-color: #e0e0e0;
-      --button-bg-color: #ffffff;
-      --button-text-color: #000000;
-      --glow-color: rgba(255, 255, 255, 0.7);
-    }
-
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #000;
-      color: var(--primary-text-color);
-      font-family: 'Roboto', sans-serif;
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Chakra Petch', sans-serif;
       overflow: hidden;
     }
 
-    .container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0px) translateX(-50%) rotate(-5deg);
-      }
-      50% {
-        transform: translateY(-20px) translateX(-50%) rotate(5deg);
-      }
-      100% {
-        transform: translateY(0px) translateX(-50%) rotate(-5deg);
-      }
-    }
-
-    @keyframes pulse-glow {
-      0% {
-        box-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
-      }
-      50% {
-        box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
-      }
-      100% {
-        box-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
-      }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
     }
 
     @keyframes fadeIn {
@@ -72,77 +36,59 @@
       }
     }
 
-    .fade-in {
-      animation: fadeIn 1.5s ease-out forwards;
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
     }
 
-    .ufo {
-      position: absolute;
-      top: 5%;
-      left: 50%;
-      width: 100px;
-      height: auto;
-      animation: float 6s ease-in-out infinite;
-      filter: drop-shadow(0px 15px 10px rgba(0,0,0,0.4));
-    }
-
-    .top-left-info {
+    .top-left {
       position: absolute;
       top: 20px;
       left: 20px;
-      animation-delay: 0.2s;
+      z-index: 10;
     }
 
     .counter {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .support-title {
-      font-size: 1rem;
+      font-size: 2rem;
       margin-bottom: 10px;
     }
 
-    .support-icons {
-      display: flex;
-      align-items: center;
-      gap: 15px;
+    .support-text {
+      font-size: 1rem;
     }
 
-    .support-icons img {
-      height: 24px;
-      filter: invert(100%);
-    }
-
-    .support-icons .diamond {
-      filter: none;
-      height: 30px;
-    }
-
-    .center-content {
+    .center-button {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      text-align: center;
     }
 
     .aliens-button {
-      background-color: var(--button-bg-color);
-      color: var(--button-text-color);
-      border: none;
-      border-radius: 50px;
-      padding: 15px 50px;
+      padding: 15px 40px;
       font-size: 1.2rem;
-      font-weight: bold;
-      font-family: 'Arial Black', Gadget, sans-serif;
-      cursor: default;
-      animation: pulse-glow 3s infinite ease-in-out;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      animation: pulse-glow 3s ease-in-out infinite;
     }
 
-    .bottom-text {
+    @keyframes pulse-glow {
+      0% {
+        box-shadow: 0 0 5px rgba(255,255,255,0.7);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(255,255,255,0.7);
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(255,255,255,0.7);
+      }
+    }
+
+    .bottom-center {
       position: absolute;
       bottom: 20px;
       left: 50%;
@@ -151,80 +97,81 @@
       font-weight: bold;
     }
 
-    .map-widget {
+    .map {
       position: absolute;
       bottom: 20px;
       left: 20px;
       width: 250px;
       height: 150px;
-      border: 1px solid #555;
+      border: 1px solid white;
       border-radius: 5px;
-      overflow: hidden;
     }
 
-    .top-right-icons {
+    .top-right {
       position: absolute;
       top: 20px;
       right: 20px;
+    }
+
+    .top-right img {
       width: 40px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- UFO Image -->
-    <img src="https://i.imgur.com/Z2n4PjS.png" alt="Floating UFO" class="ufo" />
 
-    <!-- Top Left -->
-    <div class="top-left-info fade-in">
+  <div class="container">
+
+    <!-- Top Left Info -->
+    <div class="top-left fade-in" style="animation-delay: 0.1s;">
       <div id="counter" class="counter">0</div>
-      <div class="support-title">SUPPORT ONLY:</div>
-      <div class="support-icons">
-        <img src="https://img.icons8.com/ios-filled/50/bitcoin.png" alt="Bitcoin" />
-        <img src="https://img.icons8.com/ios-filled/50/paypal.png" alt="PayPal" />
-        <img src="https://i.imgur.com/Js1V0xi.png" alt="W Icon" />
-        <img class="diamond" src="https://i.imgur.com/zsz0lGC.png" alt="Diamond" />
-      </div>
+      <div class="support-text">SUPPORT ONLY:</div>
     </div>
 
     <!-- Center Button -->
-    <div class="center-content fade-in">
-      <div class="aliens-button">ALIENS</div>
+    <div class="center-button fade-in" style="animation-delay: 0.4s;">
+      <button class="aliens-button">ALIENS</button>
     </div>
 
-    <!-- Bottom Message -->
-    <div class="bottom-text fade-in">
+    <!-- Bottom Text -->
+    <div class="bottom-center fade-in" style="animation-delay: 0.6s;">
       МАГАЗИН ОТКРОЕТСЯ ОЧЕНЬ СКОРО
     </div>
 
     <!-- Clickable Map -->
-    <a href="https://maps.google.com?q=121125+Bluebonnet+Rd,+La+Vernia,+TX+78121" target="_blank" class="map-widget fade-in">
-      <img src="https://i.imgur.com/79S2htz.png" alt="Map" width="100%" height="100%">
+    <a href="https://www.google.com/maps?q=121125+Bluebonnet+Rd,+La+Vernia,+TX+78121" target="_blank">
+      <img src="https://i.imgur.com/79S2htz.png" alt="Map" class="map fade-in" style="animation-delay: 0.8s;">
     </a>
 
     <!-- Top Right Icon -->
-    <img src="https://img.icons8.com/ios-filled/50/code.png" alt="Code Icon" class="top-right-icons fade-in" />
+    <div class="top-right fade-in" style="animation-delay: 1s;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Antu_view-grid-symbolic.svg" alt="Menu Icon">
+    </div>
+
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       function animateCounter(elementId, start, end, duration) {
         const element = document.getElementById(elementId);
-        let startTimestamp = null;
+        let startTime = null;
+
         const step = (timestamp) => {
-          if (!startTimestamp) startTimestamp = timestamp;
-          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-          const currentNumber = Math.floor(progress * (end - start) + start);
-          element.innerHTML = currentNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          const value = Math.floor(progress * (end - start) + start);
+          element.textContent = value.toLocaleString('en-US').replace(/,/g, ' ');
           if (progress < 1) {
-            window.requestAnimationFrame(step);
+            requestAnimationFrame(step);
           }
         };
-        window.requestAnimationFrame(step);
+
+        requestAnimationFrame(step);
       }
 
       animateCounter('counter', 0, 121125, 2000);
     });
   </script>
+
 </body>
 </html>
