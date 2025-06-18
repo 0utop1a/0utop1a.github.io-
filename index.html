@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -14,31 +14,23 @@
       font-family: 'Chakra Petch', sans-serif;
       overflow: hidden;
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
-    /* Profile button top-right */
+    /* PROFILE BUTTON TOP RIGHT */
     .user-profile {
+      position: absolute;
+      top: 20px;
+      right: 20px;
       width: 131px;
       height: 51px;
       border-radius: 15px;
       cursor: pointer;
       transition: 0.3s ease;
-      background: linear-gradient(
-        to bottom right,
-        #2e8eff 0%,
-        rgba(46, 142, 255, 0) 30%
-      );
+      background: linear-gradient(to bottom right, #2e8eff 0%, rgba(46, 142, 255, 0) 30%);
       background-color: rgba(46, 142, 255, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 999;
     }
 
     .user-profile:hover,
@@ -67,9 +59,15 @@
       fill: #fff;
     }
 
-    /* UTOP1A > SHOP animation button */
+    /* CENTER UTOP1A SHOP ANIMATION */
     .button {
       display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .box {
@@ -89,7 +87,7 @@
     }
 
     .box:before {
-      content: "";
+      content: "U";
       position: absolute;
       top: 0;
       background: #0f0f0f;
@@ -102,31 +100,86 @@
       transition: transform .4s;
     }
 
-    .box:nth-child(1)::before { content: 'S'; }
-    .box:nth-child(2)::before { transform: translateY(-100%); content: 'H'; }
-    .box:nth-child(3)::before { content: 'O'; }
-    .box:nth-child(4)::before { transform: translateY(-100%); content: 'P'; }
+    .box:nth-child(2)::before {
+      transform: translateY(-100%);
+      content: 'T';
+    }
+
+    .box:nth-child(3)::before {
+      content: 'O';
+    }
+
+    .box:nth-child(4)::before {
+      transform: translateY(-100%);
+      content: 'P';
+    }
+
+    .box:nth-child(5)::before {
+      content: '1';
+    }
+
+    .box:nth-child(6)::before {
+      transform: translateY(-100%);
+      content: 'A';
+    }
 
     .button:hover .box:before {
       transform: translateY(0);
+    }
+
+    .button:hover .box:nth-child(1):before { content: 'S'; }
+    .button:hover .box:nth-child(2):before { content: 'H'; }
+    .button:hover .box:nth-child(3):before { content: 'O'; }
+    .button:hover .box:nth-child(4):before { content: 'P'; }
+    .button:hover .box:nth-child(5):before { content: ''; }
+    .button:hover .box:nth-child(6):before { content: ''; }
+
+    /* SHINING 121125 BUTTON */
+    .btn-shine {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 48px;
+      color: #fff;
+      background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+      background-position: 0;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s infinite linear;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      white-space: nowrap;
+      font-family: "Poppins", sans-serif;
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 0;
+      }
+      60% {
+        background-position: 180px;
+      }
+      100% {
+        background-position: 180px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top right profile button -->
+  <!-- PROFILE BUTTON -->
   <div class="user-profile">
     <div class="user-profile-inner">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 
-                 2.239-5 5 2.239 5 5 5zm0 2c-3.313 0-10 
-                 1.672-10 5v3h20v-3c0-3.328-6.687-5-10-5z"/>
+        <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5 -5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/>
       </svg>
-      Профиль
+      Profile
     </div>
   </div>
 
-  <!-- Center hover button -->
+  <!-- CENTER SHOP ANIMATION -->
   <div class="button">
     <div class="box">U</div>
     <div class="box">T</div>
@@ -135,6 +188,9 @@
     <div class="box">1</div>
     <div class="box">A</div>
   </div>
+
+  <!-- SHINING BUTTON 121125 -->
+  <div class="btn-shine">121125</div>
 
 </body>
 </html>
