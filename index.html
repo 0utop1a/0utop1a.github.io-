@@ -24,109 +24,7 @@
       text-align: center;
     }
 
-    /* PROFILE BUTTON */
-    .user-profile {
-      width: 131px;
-      height: 51px;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: 0.3s ease;
-      background: linear-gradient(to bottom right, #2e8eff 0%, rgba(46, 142, 255, 0) 30%);
-      background-color: rgba(46, 142, 255, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-    }
-
-    .user-profile:hover {
-      background-color: rgba(46, 142, 255, 0.7);
-      box-shadow: 0 0 10px rgba(46, 142, 255, 0.5);
-    }
-
-    .user-profile-inner {
-      width: 127px;
-      height: 47px;
-      border-radius: 13px;
-      background-color: #1a1a1a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      color: #fff;
-      font-weight: 600;
-    }
-
-    /* LOGIN POPUP */
-    .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      backdrop-filter: blur(10px);
-      background: rgba(0,0,0,0.4);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 20;
-    }
-
-    .overlay.active {
-      display: flex;
-    }
-
-    .card {
-      background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
-      border-radius: 22px;
-      padding: 2em;
-      width: 300px;
-      transition: all 0.3s;
-    }
-
-    .form {
-      background-color: #171717;
-      border-radius: 20px;
-      padding: 1.5em;
-      color: white;
-    }
-
-    .field {
-      display: flex;
-      align-items: center;
-      gap: 0.5em;
-      border-radius: 25px;
-      padding: 0.6em;
-      background-color: #171717;
-      box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-      margin-bottom: 1em;
-    }
-
-    .input-field {
-      background: none;
-      border: none;
-      outline: none;
-      width: 100%;
-      color: #d3d3d3;
-    }
-
-    .button2 {
-      width: 100%;
-      padding: 0.7em;
-      border-radius: 5px;
-      background-color: #252525;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-      border: none;
-    }
-
-    .button2:hover {
-      background-color: black;
-    }
-
-    /* WORD ANIMATION */
+    /* WORD ANIMATION BUTTON */
     .button {
       display: flex;
       justify-content: center;
@@ -179,7 +77,7 @@
     .button:hover .box:nth-child(5):before { content: ""; }
     .button:hover .box:nth-child(6):before { content: ""; }
 
-    /* GLOW BUTTON */
+    /* GLOWING 121125 BUTTON */
     .shine-btn {
       position: absolute;
       bottom: 30px;
@@ -208,22 +106,6 @@
 </head>
 <body>
 
-  <!-- PROFILE BUTTON -->
-  <div class="user-profile" onclick="document.querySelector('.overlay').classList.add('active')">
-    <div class="user-profile-inner">Profile</div>
-  </div>
-
-  <!-- LOGIN POPUP -->
-  <div class="overlay" onclick="this.classList.remove('active')">
-    <div class="card" onclick="event.stopPropagation()">
-      <div class="form">
-        <div class="field"><input class="input-field" type="text" placeholder="Email or username" /></div>
-        <div class="field"><input class="input-field" type="password" placeholder="Password" /></div>
-        <button class="button2">Log in</button>
-      </div>
-    </div>
-  </div>
-
   <!-- CENTER UTOP1A / SHOP WORD -->
   <div class="centered">
     <div class="button">
@@ -236,7 +118,7 @@
     </div>
   </div>
 
-  <!-- GLOWING 121125 BUTTON -->
+  <!-- GLOWING 121125 TEXT -->
   <div class="shine-btn">121125</div>
 
 </body>
