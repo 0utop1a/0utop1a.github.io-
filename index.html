@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon</title>
+  <title>UTOP1A</title>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      background-color: black;
+      background-color: #000;
       color: #d1e3df;
       height: 100vh;
-      font-family: 'Chakra Petch', sans-serif;
       overflow: hidden;
+      font-family: 'Chakra Petch', sans-serif;
       position: relative;
     }
 
-    .user-profile {
+    .centered {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    /* PROFILE BUTTON */
+    .user-profile {
       width: 131px;
       height: 51px;
       border-radius: 15px;
@@ -30,14 +36,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1000;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
     }
 
-    .user-profile:hover,
-    .user-profile:focus {
+    .user-profile:hover {
       background-color: rgba(46, 142, 255, 0.7);
       box-shadow: 0 0 10px rgba(46, 142, 255, 0.5);
-      outline: none;
     }
 
     .user-profile-inner {
@@ -53,90 +60,47 @@
       font-weight: 600;
     }
 
-    .main-content {
-      height: 100vh;
-      display: flex;
+    /* LOGIN POPUP */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.4);
+      display: none;
       align-items: center;
       justify-content: center;
+      z-index: 20;
     }
 
-    .login-modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.9);
-      opacity: 0;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      z-index: 1001;
-      pointer-events: none;
-    }
-
-    .login-modal.active {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-      pointer-events: auto;
-    }
-
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
-      z-index: 1000;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    .modal-backdrop.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* Login form styles (from Uiverse) */
-    .form {
+    .overlay.active {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 2em;
-      background-color: #171717;
-      border-radius: 25px;
-      transition: 0.4s ease-in-out;
     }
 
     .card {
       background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
       border-radius: 22px;
+      padding: 2em;
+      width: 300px;
       transition: all 0.3s;
     }
 
-    .card:hover {
-      box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
-    }
-
-    #heading {
-      text-align: center;
+    .form {
+      background-color: #171717;
+      border-radius: 20px;
+      padding: 1.5em;
       color: white;
-      font-size: 1.2em;
     }
 
     .field {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 0.5em;
       border-radius: 25px;
       padding: 0.6em;
-      border: none;
-      color: white;
       background-color: #171717;
       box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-    }
-
-    .input-icon {
-      height: 1.3em;
-      width: 1.3em;
-      fill: white;
+      margin-bottom: 1em;
     }
 
     .input-field {
@@ -147,82 +111,133 @@
       color: #d3d3d3;
     }
 
-    .btn {
-      display: flex;
-      justify-content: center;
-      margin-top: 1em;
-      gap: 1em;
-    }
-
-    .button1,
-    .button2,
-    .button3 {
-      padding: 0.5em 1.1em;
+    .button2 {
+      width: 100%;
+      padding: 0.7em;
       border-radius: 5px;
-      border: none;
       background-color: #252525;
       color: white;
-      transition: 0.4s ease-in-out;
       cursor: pointer;
+      transition: 0.3s;
+      border: none;
     }
 
-    .button1:hover,
     .button2:hover {
       background-color: black;
     }
 
-    .button3:hover {
-      background-color: red;
+    /* WORD ANIMATION */
+    .button {
+      display: flex;
+      justify-content: center;
     }
 
+    .box {
+      width: 35px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      transition: all 0.8s;
+      cursor: pointer;
+      position: relative;
+      background: rgb(58, 165, 253);
+      overflow: hidden;
+    }
+
+    .box:before {
+      content: "U";
+      position: absolute;
+      top: 0;
+      background: #0f0f0f;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(100%);
+      transition: transform 0.4s;
+    }
+
+    .box:nth-child(2)::before { transform: translateY(-100%); content: 'T'; }
+    .box:nth-child(3)::before { content: 'O'; }
+    .box:nth-child(4)::before { transform: translateY(-100%); content: 'P'; }
+    .box:nth-child(5)::before { content: '1'; }
+    .box:nth-child(6)::before { transform: translateY(-100%); content: 'A'; }
+
+    .button:hover .box:before {
+      transform: translateY(0);
+    }
+
+    .button:hover .box:nth-child(1):before { content: "S"; }
+    .button:hover .box:nth-child(2):before { content: "H"; }
+    .button:hover .box:nth-child(3):before { content: "O"; }
+    .button:hover .box:nth-child(4):before { content: "P"; }
+    .button:hover .box:nth-child(5):before { content: ""; }
+    .button:hover .box:nth-child(6):before { content: ""; }
+
+    /* GLOW BUTTON */
+    .shine-btn {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 48px;
+      color: #fff;
+      background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+      background-position: 0;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s infinite linear;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      border: none;
+      text-decoration: none;
+    }
+
+    @keyframes shine {
+      0% { background-position: 0; }
+      60% { background-position: 180px; }
+      100% { background-position: 180px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Profile Button -->
-  <div class="user-profile" onclick="toggleModal()">
-    <div class="user-profile-inner">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M12 12c2.67 0 8 1.34 8 4v2h-16v-2c0-2.66 5.33-4 8-4zm0-2c-1.66 0-3-1.34-3-3s1.34-3 
-        3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
-      PROFILE
-    </div>
+  <!-- PROFILE BUTTON -->
+  <div class="user-profile" onclick="document.querySelector('.overlay').classList.add('active')">
+    <div class="user-profile-inner">Profile</div>
   </div>
 
-  <!-- Modal Backdrop -->
-  <div class="modal-backdrop" id="backdrop" onclick="toggleModal()"></div>
-
-  <!-- Login Modal -->
-  <div class="login-modal" id="loginModal">
-    <div class="card">
-      <div class="form card2">
-        <div id="heading">Welcome</div>
-        <div class="field">
-          <input autocomplete="off" placeholder="Username" class="input-field" type="text">
-        </div>
-        <div class="field">
-          <input placeholder="Password" class="input-field" type="password">
-        </div>
-        <div class="btn">
-          <button class="button1">Sign in</button>
-          <button class="button2">Sign up</button>
-        </div>
-        <div class="btn">
-          <button class="button3" onclick="toggleModal()">Close</button>
-        </div>
+  <!-- LOGIN POPUP -->
+  <div class="overlay" onclick="this.classList.remove('active')">
+    <div class="card" onclick="event.stopPropagation()">
+      <div class="form">
+        <div class="field"><input class="input-field" type="text" placeholder="Email or username" /></div>
+        <div class="field"><input class="input-field" type="password" placeholder="Password" /></div>
+        <button class="button2">Log in</button>
       </div>
     </div>
   </div>
 
-  <!-- Optional: Page Content Placeholder -->
-  <div class="main-content">
-    <!-- Anything else you want here -->
+  <!-- CENTER UTOP1A / SHOP WORD -->
+  <div class="centered">
+    <div class="button">
+      <div class="box">U</div>
+      <div class="box">T</div>
+      <div class="box">O</div>
+      <div class="box">P</div>
+      <div class="box">1</div>
+      <div class="box">A</div>
+    </div>
   </div>
 
-  <script>
-    function toggleModal() {
-      document.getElementById('loginModal').classList.toggle('active');
-      document.getElementById('backdrop').classList.toggle('active');
-    }
-  </script>
+  <!-- GLOWING 121125 BUTTON -->
+  <div class="shine-btn">121125</div>
+
 </body>
 </html>
