@@ -34,7 +34,7 @@
       cursor: pointer;
       border-radius: 0.4em;
       background: rgba(235, 252, 254, 0.8);
-      transform: scale(0.65); /* 35% smaller */
+      transform: scale(0.65);
     }
 
     .container {
@@ -45,10 +45,7 @@
       overflow: hidden;
     }
 
-    .folder {
-      content: "";
-      position: absolute;
-    }
+    .folder { position: absolute; }
 
     .folder_one {
       bottom: 0;
@@ -150,7 +147,7 @@
       position: absolute;
       bottom: 20px;
       right: 20px;
-      transform: scale(0.6); /* 40% smaller */
+      transform: scale(0.5); /* 50% smaller */
     }
 
     .dot {
@@ -204,7 +201,7 @@
 
     .card .text {
       font-weight: bolder;
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       background: linear-gradient(45deg, #000000 4%, #fff, #000);
       background-clip: text;
       color: transparent;
@@ -214,7 +211,7 @@
 <body>
 
   <div class="folder-wrapper">
-    <!-- Left Folder -->
+    <!-- Folder 1 -->
     <button class="button">
       <div class="container">
         <div class="folder folder_one"></div>
@@ -226,7 +223,7 @@
       <div class="text">121125</div>
     </button>
 
-    <!-- Middle Folder -->
+    <!-- Folder 2 -->
     <button class="button">
       <div class="container">
         <div class="folder folder_one"></div>
@@ -238,7 +235,7 @@
       <div class="text">collections</div>
     </button>
 
-    <!-- Right Folder -->
+    <!-- Folder 3 -->
     <button class="button">
       <div class="container">
         <div class="folder folder_one"></div>
@@ -251,7 +248,7 @@
     </button>
   </div>
 
-  <!-- View Counter -->
+  <!-- VIEW COUNTER -->
   <div class="outer">
     <div class="dot"></div>
     <div class="card">
@@ -266,15 +263,12 @@
     const increment = 47;
     const intervalMinutes = 50;
 
-    function getMinutesPassedSinceStart(startDate) {
-      const now = new Date();
-      return Math.floor((now - startDate) / (1000 * 60));
-    }
-
-    const startTime = new Date("2024-06-01T00:00:00Z"); // Change as needed
-    const totalMinutes = getMinutesPassedSinceStart(startTime);
-    const updatedViews = baseViews + Math.floor(totalMinutes / intervalMinutes) * increment;
-    viewElement.textContent = updatedViews;
+    const startTime = new Date("2024-06-01T00:00:00Z");
+    const now = new Date();
+    const minutesPassed = Math.floor((now - startTime) / (1000 * 60));
+    const additionalViews = Math.floor(minutesPassed / intervalMinutes) * increment;
+    const totalViews = baseViews + additionalViews;
+    viewElement.textContent = totalViews.toLocaleString();
   </script>
 
 </body>
