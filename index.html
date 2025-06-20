@@ -15,14 +15,14 @@
       align-items: center;
     }
 
-    /* === Folder Button (Smaller) === */
+    /* === Folder Button (35% smaller) === */
     .button {
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 4.3em;
-      height: 4.3em;
+      width: 3.45em;
+      height: 3.45em;
       border: none;
       cursor: pointer;
       border-radius: 0.4em;
@@ -31,8 +31,8 @@
 
     .container {
       position: relative;
-      width: 2.8em;
-      height: 2.5em;
+      width: 2.3em;
+      height: 2.1em;
       background: none;
       overflow: hidden;
     }
@@ -69,31 +69,31 @@
       left: 88%;
       width: 0;
       height: 0;
-      border-left: 6px solid rgb(206, 167, 39);
-      border-top: 0.25em solid transparent;
-      border-bottom: 0.25em solid transparent;
+      border-left: 5px solid rgb(206, 167, 39);
+      border-top: 0.22em solid transparent;
+      border-bottom: 0.22em solid transparent;
     }
 
     .folder_three {
       display: flex;
       align-items: center;
       justify-content: center;
-      left: 0.4em;
+      left: 0.3em;
       bottom: 0;
-      width: 2em;
-      height: 0.8em;
+      width: 1.6em;
+      height: 0.7em;
       border-radius: 4px 4px 0 0;
       background: linear-gradient(-35deg, rgb(25, 102, 218), rgb(109, 165, 249));
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
       position: absolute;
-      font-size: 0.9em;
+      font-size: 0.75em;
     }
 
     .folder_four {
-      left: 0.8em;
-      bottom: 0.25em;
-      width: 1.2em;
-      height: 0.15em;
+      left: 0.65em;
+      bottom: 0.2em;
+      width: 1em;
+      height: 0.12em;
       border-radius: 1em;
       background-color: rgb(20, 77, 163);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -104,8 +104,8 @@
       content: "";
       position: absolute;
       bottom: 0;
-      width: 0.8em;
-      height: 0.3em;
+      width: 0.6em;
+      height: 0.25em;
       background-color: #999;
       border: none;
       border-radius: 1em;
@@ -114,7 +114,7 @@
 
     .button:active .active_line,
     .button:focus .active_line {
-      width: 2em;
+      width: 1.6em;
       background-color: rgb(41, 126, 255);
     }
 
@@ -126,24 +126,19 @@
       20% {
         scale: 0.8;
       }
-
       30% {
         scale: 1;
         transform: translateY(0);
       }
-
       50% {
         transform: translateY(-6px);
       }
-
       65% {
         transform: translateY(4px);
       }
-
       80% {
         transform: translateY(0);
       }
-
       100% {
         scale: 1;
       }
@@ -152,9 +147,9 @@
     .text {
       content: "";
       position: absolute;
-      top: -3.5em;
-      width: 9em;
-      height: 2.3em;
+      top: -3em;
+      width: 7em;
+      height: 2em;
       background-color: #666;
       color: #fff;
       display: flex;
@@ -166,7 +161,7 @@
       opacity: 0;
       transition: all 0.25s linear;
       font-family: sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
     }
 
     .button:hover .text {
