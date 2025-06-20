@@ -2,25 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>utop1a</title>
   <style>
     body {
       margin: 0;
       background-color: black;
-      color: white;
-      font-family: sans-serif;
       height: 100vh;
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      font-family: sans-serif;
     }
 
-    /* FOLDER STYLES */
     .folder-wrapper {
       display: flex;
-      gap: 20px;
+      gap: 40px;
     }
 
     .button {
@@ -28,24 +26,26 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 5.3em;
-      height: 5.3em;
+      width: 3.45em;
+      height: 3.45em;
       border: none;
       cursor: pointer;
       border-radius: 0.4em;
       background: rgba(235, 252, 254, 0.8);
-      transform: scale(0.65);
     }
 
     .container {
       position: relative;
-      width: 3.5em;
-      height: 3.1em;
+      width: 2.3em;
+      height: 2.1em;
       background: none;
       overflow: hidden;
     }
 
-    .folder { position: absolute; }
+    .folder {
+      content: "";
+      position: absolute;
+    }
 
     .folder_one {
       bottom: 0;
@@ -70,206 +70,151 @@
     .folder_two::before {
       content: "";
       position: absolute;
+      display: inline;
       left: 88%;
       width: 0;
       height: 0;
-      border-left: 7px solid rgb(206, 167, 39);
-      border-top: 0.3em solid transparent;
-      border-bottom: 0.3em solid transparent;
+      border-left: 5px solid rgb(206, 167, 39);
+      border-top: 0.22em solid transparent;
+      border-bottom: 0.22em solid transparent;
     }
 
     .folder_three {
       display: flex;
       align-items: center;
       justify-content: center;
-      left: 0.5em;
+      left: 0.3em;
       bottom: 0;
-      width: 2.5em;
-      height: 0.9em;
+      width: 1.6em;
+      height: 0.7em;
       border-radius: 4px 4px 0 0;
       background: linear-gradient(-35deg, rgb(25, 102, 218), rgb(109, 165, 249));
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      position: absolute;
+      font-size: 0.75em;
     }
 
     .folder_four {
-      left: 1em;
-      bottom: 0.3em;
-      width: 1.5em;
-      height: 0.18em;
+      left: 0.65em;
+      bottom: 0.2em;
+      width: 1em;
+      height: 0.12em;
       border-radius: 1em;
       background-color: rgb(20, 77, 163);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: absolute;
     }
 
     .active_line {
       content: "";
       position: absolute;
       bottom: 0;
-      width: 0.9em;
-      height: 0.4em;
+      width: 0.6em;
+      height: 0.25em;
       background-color: #999;
+      border: none;
       border-radius: 1em;
       transition: all 0.15s linear;
     }
 
-    .button:hover .active_line {
-      width: 2.3em;
+    .button:active .active_line,
+    .button:focus .active_line {
+      width: 1.6em;
       background-color: rgb(41, 126, 255);
     }
 
+    .button:focus .container {
+      animation: wow 1s forwards;
+    }
+
+    @keyframes wow {
+      20% {
+        scale: 0.8;
+      }
+      30% {
+        scale: 1;
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+      65% {
+        transform: translateY(4px);
+      }
+      80% {
+        transform: translateY(0);
+      }
+      100% {
+        scale: 1;
+      }
+    }
+
     .text {
+      content: "";
       position: absolute;
-      top: -4.5em;
-      width: 7.7em;
-      height: 2.6em;
+      top: -3em;
+      width: 8em;
+      height: 2em;
       background-color: #666;
       color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
+      border: none;
       border-radius: 5px;
       text-shadow: 0 0 10px rgb(0, 0, 0);
       opacity: 0;
       transition: all 0.25s linear;
+      font-size: 0.75rem;
+      white-space: nowrap;
     }
 
     .button:hover .text {
       opacity: 1;
-    }
-
-    /* VIEW COUNTER */
-    .outer {
-      width: 300px;
-      height: 250px;
-      border-radius: 10px;
-      padding: 1px;
-      background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      transform: scale(0.5); /* 50% smaller */
-    }
-
-    .dot {
-      width: 5px;
-      aspect-ratio: 1;
-      position: absolute;
-      background-color: #fff;
-      box-shadow: 0 0 10px #ffffff;
-      border-radius: 100px;
-      z-index: 2;
-      right: 10%;
-      top: 10%;
-      animation: moveDot 6s linear infinite;
-    }
-
-    @keyframes moveDot {
-      0%, 100% { top: 10%; right: 10%; }
-      25% { top: 10%; right: calc(100% - 35px); }
-      50% { top: calc(100% - 30px); right: calc(100% - 35px); }
-      75% { top: calc(100% - 30px); right: 10%; }
-    }
-
-    .card {
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      border-radius: 9px;
-      border: solid 1px #202222;
-      background: radial-gradient(circle 280px at 0% 0%, #444444, #0c0d0d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: #fff;
-    }
-
-    .ray {
-      width: 220px;
-      height: 45px;
-      border-radius: 100px;
-      position: absolute;
-      background-color: #c7c7c7;
-      opacity: 0.4;
-      box-shadow: 0 0 50px #fff;
-      filter: blur(10px);
-      transform-origin: 10%;
-      top: 0%;
-      left: 0;
-      transform: rotate(40deg);
-    }
-
-    .card .text {
-      font-weight: bolder;
-      font-size: 2.3rem;
-      background: linear-gradient(45deg, #000000 4%, #fff, #000);
-      background-clip: text;
-      color: transparent;
     }
   </style>
 </head>
 <body>
 
   <div class="folder-wrapper">
-    <!-- Folder 1 -->
+    
+    <!-- Left Folder: 121125 -->
     <button class="button">
-      <div class="container">
-        <div class="folder folder_one"></div>
-        <div class="folder folder_two"></div>
-        <div class="folder folder_three"></div>
-        <div class="folder folder_four"></div>
-        <div class="active_line"></div>
-      </div>
       <div class="text">121125</div>
-    </button>
-
-    <!-- Folder 2 -->
-    <button class="button">
       <div class="container">
         <div class="folder folder_one"></div>
         <div class="folder folder_two"></div>
-        <div class="folder folder_three"></div>
+        <div class="folder folder_three">📁</div>
         <div class="folder folder_four"></div>
-        <div class="active_line"></div>
       </div>
+      <div class="active_line"></div>
+    </button>
+
+    <!-- Center Folder: COLLECTIONS -->
+    <button class="button">
       <div class="text">collections</div>
-    </button>
-
-    <!-- Folder 3 -->
-    <button class="button">
       <div class="container">
         <div class="folder folder_one"></div>
         <div class="folder folder_two"></div>
-        <div class="folder folder_three"></div>
+        <div class="folder folder_three">📁</div>
         <div class="folder folder_four"></div>
-        <div class="active_line"></div>
       </div>
-      <div class="text">NEWS</div>
+      <div class="active_line"></div>
     </button>
+
+    <!-- Right Folder: NEWS -->
+    <button class="button">
+      <div class="text">NEWS</div>
+      <div class="container">
+        <div class="folder folder_one"></div>
+        <div class="folder folder_two"></div>
+        <div class="folder folder_three">📁</div>
+        <div class="folder folder_four"></div>
+      </div>
+      <div class="active_line"></div>
+    </button>
+
   </div>
-
-  <!-- VIEW COUNTER -->
-  <div class="outer">
-    <div class="dot"></div>
-    <div class="card">
-      <div class="ray"></div>
-      <div class="text" id="views">763</div>
-    </div>
-  </div>
-
-  <script>
-    const viewElement = document.getElementById("views");
-    const baseViews = 763;
-    const increment = 47;
-    const intervalMinutes = 50;
-
-    const startTime = new Date("2024-06-01T00:00:00Z");
-    const now = new Date();
-    const minutesPassed = Math.floor((now - startTime) / (1000 * 60));
-    const additionalViews = Math.floor(minutesPassed / intervalMinutes) * increment;
-    const totalViews = baseViews + additionalViews;
-    viewElement.textContent = totalViews.toLocaleString();
-  </script>
 
 </body>
 </html>
