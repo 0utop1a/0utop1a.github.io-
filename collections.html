@@ -9,9 +9,94 @@
       margin: 0;
       background-color: black;
       height: 100vh;
+      overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+    .payment-section {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-align: left;
+    }
+
+    .payment-title {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      color: #f1f1f1;
+    }
+
+    .coin-row {
+      display: flex;
+      align-items: center;
+      gap: 30px; /* Reserve space for Ethereum */
+    }
+
+    .coin {
+      font-size: 40px;
+      width: 0.1em;
+      height: 1em;
+      background: linear-gradient(#faa504, #141001);
+      margin: 0;
+      position: relative;
+      animation: rotate_4001510 7s infinite linear;
+      transform-style: preserve-3d;
+    }
+
+    .coin .side,
+    .coin:before,
+    .coin:after {
+      content: "";
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      overflow: hidden;
+      border-radius: 50%;
+      right: -0.4em;
+      text-align: center;
+      line-height: 1;
+      transform: rotateY(-90deg);
+      backface-visibility: hidden;
+    }
+
+    .coin .tails,
+    .coin:after {
+      left: -0.4em;
+      transform: rotateY(90deg);
+    }
+
+    .coin:before,
+    .coin:after {
+      background: linear-gradient(#faa504, #141001);
+    }
+
+    .coin:after {
+      transform: rotateY(-90deg);
+    }
+
+    @keyframes rotate_4001510 {
+      100% {
+        transform: rotateY(360deg);
+      }
     }
   </style>
 </head>
 <body>
+
+  <div class="payment-section">
+    <div class="payment-title">PAYMENT ONLY AVAILABLE WITH:</div>
+    <div class="coin-row">
+      <div class="coin">
+        <div class="side"></div>
+        <div class="tails"></div>
+      </div>
+      <!-- Space reserved for Ethereum -->
+    </div>
+  </div>
+
 </body>
 </html>
