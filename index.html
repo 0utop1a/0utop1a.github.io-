@@ -10,15 +10,24 @@
       background-color: black;
       height: 100vh;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      margin-top: 20px;
+      width: 80px;
+      height: auto;
     }
 
     .folder-wrapper {
       display: flex;
       gap: 40px;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
     }
 
     .button {
@@ -128,25 +137,12 @@
     }
 
     @keyframes wow {
-      20% {
-        scale: 0.8;
-      }
-      30% {
-        scale: 1;
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-6px);
-      }
-      65% {
-        transform: translateY(4px);
-      }
-      80% {
-        transform: translateY(0);
-      }
-      100% {
-        scale: 1;
-      }
+      20% { scale: 0.8; }
+      30% { scale: 1; transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      65% { transform: translateY(4px); }
+      80% { transform: translateY(0); }
+      100% { scale: 1; }
     }
 
     .text {
@@ -176,6 +172,10 @@
 </head>
 <body>
 
+  <!-- Animated Logo -->
+  <img class="logo" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXd1Mjl5bzduMWNsd3I3eGF1d2VzZGxrZHY5cGU3NjAwZW9xNDExNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DRqQQzzcDHtHLcfBql/giphy.gif" alt="Logo" />
+
+  <!-- Folder Buttons -->
   <div class="folder-wrapper">
     
     <!-- Left Folder: 121125 -->
