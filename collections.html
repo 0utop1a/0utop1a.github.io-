@@ -15,47 +15,49 @@
       font-family: system-ui, sans-serif;
     }
 
-    /* From Uiverse.io by andrew-demchenk0 */
+    /* Card styles */
     .card {
       --font-color: #fefefe;
       --font-color-sub: #7e7e7e;
       --bg-color: #111;
       --main-color: #fefefe;
       --main-focus: #2d8cf0;
-      width: 230px;
-      height: 300px;
+      width: 160px; /* 30% smaller */
+      height: 210px;
       background: var(--bg-color);
       border: 2px solid var(--main-color);
-      box-shadow: 4px 4px var(--main-color);
+      box-shadow: 3px 3px var(--main-color);
       border-radius: 5px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 20px;
-      gap: 10px;
+      padding: 15px;
+      gap: 5px;
     }
 
     .card-img {
       transition: all 0.5s;
       display: flex;
       justify-content: center;
+      margin-bottom: -10px; /* overlap the divider a bit */
     }
 
     .card-img img {
-      width: 100px;
+      width: 110px;
       height: auto;
       object-fit: contain;
+      display: block;
     }
 
     .card-title {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 500;
       text-align: center;
       color: var(--font-color);
     }
 
     .card-subtitle {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 400;
       color: var(--font-color-sub);
       text-align: center;
@@ -75,23 +77,23 @@
     }
 
     .card-price {
-      font-size: 20px;
+      font-size: 14px;
       font-weight: 500;
       color: var(--font-color);
     }
 
     .card-price span {
-      font-size: 20px;
+      font-size: 14px;
       font-weight: 500;
       color: var(--font-color-sub);
     }
 
     .card-btn {
-      height: 35px;
+      height: 30px;
       background: var(--bg-color);
       border: 2px solid var(--main-color);
       border-radius: 5px;
-      padding: 0 15px;
+      padding: 0 12px;
       transition: all 0.3s;
       cursor: pointer;
     }
@@ -104,7 +106,7 @@
     }
 
     .card-img:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     .card-btn:hover {
@@ -116,7 +118,7 @@
     }
 
     .card-btn:active {
-      transform: translateY(3px);
+      transform: translateY(2px);
     }
   </style>
 </head>
@@ -126,7 +128,7 @@
     <div class="card-img">
       <img src="https://i.ibb.co/Q3wxDQ7S/Adobe-Express-file.png" alt="shirt" />
     </div>
-    <div class="card-title">Utop1a Tee</div>
+    <div class="card-title">UT1</div>
     <div class="card-subtitle">Limited Drop</div>
     <div class="card-divider"></div>
     <div class="card-footer">
