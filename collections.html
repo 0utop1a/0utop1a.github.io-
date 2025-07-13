@@ -9,66 +9,134 @@
       margin: 0;
       background-color: black;
       height: 100vh;
-      overflow: hidden;
-      font-family: sans-serif;
-      position: relative;
-    }
-
-    .top-right {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-
-    /* From Uiverse.io by JaydipPrajapati1910 */
-    .button {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 10px 15px;
-      gap: 15px;
-      background-color: #181717;
-      outline: 3px #181717 solid;
-      outline-offset: -3px;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* From Uiverse.io by andrew-demchenk0 */
+    .card {
+      --font-color: #fefefe;
+      --font-color-sub: #7e7e7e;
+      --bg-color: #111;
+      --main-color: #fefefe;
+      --main-focus: #2d8cf0;
+      width: 230px;
+      height: 300px;
+      background: var(--bg-color);
+      border: 2px solid var(--main-color);
+      box-shadow: 4px 4px var(--main-color);
       border-radius: 5px;
-      border: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+      gap: 10px;
+    }
+
+    .card-img {
+      transition: all 0.5s;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card-img img {
+      width: 100px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+      color: var(--font-color);
+    }
+
+    .card-subtitle {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--font-color-sub);
+      text-align: center;
+    }
+
+    .card-divider {
+      width: 100%;
+      border: 1px solid var(--main-color);
+      border-radius: 50px;
+    }
+
+    .card-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-price {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--font-color);
+    }
+
+    .card-price span {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--font-color-sub);
+    }
+
+    .card-btn {
+      height: 35px;
+      background: var(--bg-color);
+      border: 2px solid var(--main-color);
+      border-radius: 5px;
+      padding: 0 15px;
+      transition: all 0.3s;
       cursor: pointer;
-      transition: 400ms;
     }
 
-    .button .text {
-      color: white;
-      font-weight: 700;
-      font-size: 1em;
-      transition: 400ms;
+    .card-btn svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--main-color);
+      transition: all 0.3s;
     }
 
-    .button svg path {
-      transition: 400ms;
+    .card-img:hover {
+      transform: translateY(-3px);
     }
 
-    .button:hover {
-      background-color: transparent;
+    .card-btn:hover {
+      border: 2px solid var(--main-focus);
     }
 
-    .button:hover .text {
-      color: #181717;
+    .card-btn:hover svg {
+      fill: var(--main-focus);
     }
 
-    .button:hover svg path {
-      fill: #181717;
+    .card-btn:active {
+      transform: translateY(3px);
     }
   </style>
 </head>
 <body>
 
-  <div class="top-right">
-    <button class="button">
-      <div class="text">Menu</div>
-      <svg height="20" width="20" viewBox="0 0 512 512" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-        <path d="M80 160H432V192H80zM80 248H432V280H80zM80 336H432V368H80z"/>
-      </svg>
-    </button>
+  <div class="card">
+    <div class="card-img">
+      <img src="https://i.ibb.co/Q3wxDQ7S/Adobe-Express-file.png" alt="shirt" />
+    </div>
+    <div class="card-title">Utop1a Tee</div>
+    <div class="card-subtitle">Limited Drop</div>
+    <div class="card-divider"></div>
+    <div class="card-footer">
+      <div class="card-price">$47</div>
+      <div class="card-btn">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L15 8H9L12 2ZM2 22L12 13L22 22H2Z" />
+        </svg>
+      </div>
+    </div>
   </div>
 
 </body>
