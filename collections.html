@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>collections</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 20px;
+    }
 
+    /* Card styles */
+    .card {
+      width: 150px; /* smaller */
+      height: 220px; /* smaller */
+      background: #313131;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: 0.2s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img {
+      height: 40%;
+      position: absolute;
+      transition: 0.2s ease-in-out;
+      z-index: 1;
+    }
+
+    .textBox {
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: 0.2s ease-in-out;
+      z-index: 2;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .card:hover > .textBox {
+      opacity: 1;
+    }
+
+    .card:hover > .img {
+      height: 60%;
+      filter: blur(6px);
+      animation: anim 3s infinite;
+    }
+
+    @keyframes anim {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .card:hover {
+      transform: scale(1.04) rotate(-1deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- Placeholder image, replace if needed -->
+    <img class="img" src="https://i.ibb.co/6J4dCWF0/Adobe-Express-file.png" alt="UT1 Tee">
+    <div class="textBox">
+      <div class="text">Only in ETH</div>
+    </div>
+  </div>
+
+</body>
+</html>
