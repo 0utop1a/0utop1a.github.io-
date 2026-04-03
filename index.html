@@ -5,20 +5,33 @@
 <link rel="icon" href="favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
-if (window.innerWidth <= 768) {
-window.location.href = "mobile.html";
-}
-</script>
-
 <style>
 body{
 background:black;
 margin:0;
 height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* logo */
+.logo{
+width:300px;
+animation:spin 10s linear infinite;
+}
+
+/* rotation */
+@keyframes spin{
+from{transform:rotateY(0deg);}
+to{transform:rotateY(360deg);}
 }
 </style>
 </head>
+
 <body>
+
+<img src="https://ibb.co/8LvpVwkX" class="logo">
+
 </body>
 </html>
